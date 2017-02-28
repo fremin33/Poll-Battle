@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :polls
-
+  resources :responses do
+    resources :votes
+  end
 end

@@ -1,20 +1,24 @@
 class PollsController < ApplicationController
+  before_action :set_poll, only: [ :show, :create]
+
   def index
   end
 
   def show
     @vote = Vote.new
-    @poll = Poll.find(params[:id])
     @responses = @poll.responses
     @first_response = @responses.first
     @second_response = @responses.last
-    @first_response_count = @first_response.votes.count
-    @second_response_count = @second_response.votes.count
+    @first_response_count = @first_response.votes.size
+    @second_response_count = @second_response.votes.size
   end
 
   def create
-    @poll = Poll.find(params[:id])
-
   end
 
+  private
+
+  def set_poll
+    @poll = Poll.find(params[:id])
+  end
 end
