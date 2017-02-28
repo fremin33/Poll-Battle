@@ -1,8 +1,6 @@
 class PollsController < ApplicationController
   before_action :set_poll, only: [ :show, :create]
-
-  def index
-  end
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
     @vote = Vote.new
