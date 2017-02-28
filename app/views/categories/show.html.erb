@@ -1,2 +1,10 @@
 <h1>Categories#show</h1>
 <p>Find me in app/views/categories/show.html.erb</p>
+<div class= "container">
+  <% @category_polls.each do |poll| %>
+    <div class= "category">
+      <%= link_to poll.title, poll_path(poll)%>
+    </div>
+  <% end %>
+</div>
+

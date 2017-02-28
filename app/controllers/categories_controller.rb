@@ -5,5 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
+    @category_polls = @category.polls
   end
 end
