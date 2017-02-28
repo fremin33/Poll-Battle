@@ -1,11 +1,10 @@
+Vote.destroy_all
 Response.destroy_all
 Poll.destroy_all
 User.destroy_all
 Category.destroy_all
 
-
-
-10.times do
+20.times do
   User.new(
     email: Faker::Internet.email,
     password: "pollbattle",
@@ -32,37 +31,19 @@ Poll.new(title: "Q vs R", user: User.all.sample, category: Category.all.sample).
 Poll.new(title: "S vs T", user: User.all.sample, category: Category.all.sample).save
 Poll.new(title: "U vs V", user: User.all.sample, category: Category.all.sample).save
 
-Response.new(label: "A", poll: Poll.all[0]).save
-Response.new(label: "B", poll: Poll.all[0]).save
 
-Response.new(label: "C", poll: Poll.all[1]).save
-Response.new(label: "D", poll: Poll.all[1]).save
 
-Response.new(label: "E", poll: Poll.all[2]).save
-Response.new(label: "F", poll: Poll.all[2]).save
+Poll.all.each do |poll|
+  response = Response.new(label: poll.title.first, poll: poll)
+  response.picture_url = "http://www.fiche-maternelle.com/coloriage-#{poll.title.first.downcase}.jpg"
+  response.save
 
-Response.new(label: "G", poll: Poll.all[3]).save
-Response.new(label: "H", poll: Poll.all[3]).save
+  response = Response.new(label: poll.title.last, poll: poll)
+  response.picture_url = "http://www.fiche-maternelle.com/coloriage-#{poll.title.last.downcase}.jpg"
+  response.save
+end
 
-Response.new(label: "I", poll: Poll.all[4]).save
-Response.new(label: "J", poll: Poll.all[4]).save
-
-Response.new(label: "K", poll: Poll.all[5]).save
-Response.new(label: "L", poll: Poll.all[5]).save
-
-Response.new(label: "M", poll: Poll.all[6]).save
-Response.new(label: "N", poll: Poll.all[6]).save
-
-Response.new(label: "O", poll: Poll.all[7]).save
-Response.new(label: "P", poll: Poll.all[7]).save
-
-Response.new(label: "Q", poll: Poll.all[8]).save
-Response.new(label: "R", poll: Poll.all[8]).save
-
-Response.new(label: "S", poll: Poll.all[9]).save
-Response.new(label: "T", poll: Poll.all[9]).save
-
-Response.new(label: "U", poll: Poll.all[10]).save
-Response.new(label: "V", poll: Poll.all[10]).save
-
+2500.times do
+  Vote.new(user: User.all.sample, response: Response.all.sample).save
+end
 
