@@ -13,10 +13,18 @@ Category.destroy_all
 end
 
 Category.new(name: "Music").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365558/music_wtcq12.jpg"
 Category.new(name: "Movies").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365501/movies_zuzfb6.jpg"
 Category.new(name: "Sport").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365591/sport_vggirl.jpg"
 Category.new(name: "Geek").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365556/space_v4mxnd.jpg"
 Category.new(name: "Food").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365544/food_yqjoit.jpg"
+Category.new(name: "Fashion").save
+Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488366727/fashion_mmgzk9.jpg"
+
 
 
 Poll.new(title: "A vs B", user: User.all.sample, category: Category.all.sample).save

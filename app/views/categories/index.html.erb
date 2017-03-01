@@ -1,10 +1,10 @@
-<h1>All areas</h1>
-<p>Une belle mosaique avec des photos des catégories </p>
-<div class= "container">
-  <% @categories.each do |category| %>
-    <div class= "category">
-      <%= link_to category.name, category_path(category) %>
+  <h1>All areas</h1>
+  <p>Une belle mosaique avec des photos des catégories </p>
+  <div class= "container-fluide">
+    <% @categories.each do |category| %>
+      <div class= "card">
+        <%= link_to category.name, category_path(category) %>
 
-    </div>
-  <% end %>
-</div>
+      </div>
+    <% end %>
+  </div>
