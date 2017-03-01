@@ -6,7 +6,7 @@ margin-top: 60px;
 }
 
 .card {
-  padding: 5px 5px;
+  padding: 1px 1px;
   content: center;
   display: flex;
   justify-content: center;
@@ -25,7 +25,9 @@ margin-top: 60px;
 }
 
 .card-title a:visited {
-  color: $color3;
+  color: $color2;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .card-title a {
@@ -41,11 +43,8 @@ margin-top: 60px;
   position: relative;
   height: 100%;
   width: 100%;
-  // background: #eff2f2; /* Old browsers */
-  // background: -moz-linear-gradient(left,  #eff2f2 0%, #89edda 20%, #89edda 63%, #f7f7f7 92%, #f7f7f7 100%); /* FF3.6-15 */
-  // background: -webkit-linear-gradient(left,  #eff2f2 0%,#89edda 20%,#89edda 63%,#f7f7f7 92%,#f7f7f7 100%); /* Chrome10-25,Safari5.1-6 */
-  // background: linear-gradient(to right,  #eff2f2 0%,#89edda 20%,#89edda 63%,#f7f7f7 92%,#f7f7f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff2f2', endColorstr='#f7f7f7',GradientType=1 ); /* IE6-9 */
-  background-image: linear-gradient(to right,  #eff2f2 0%,#89edda 20%,#89edda 63%,#f7f7f7 92%,#f7f7f7 100%);
-  opacity: 0.6;
-  }
+  background-size: cover;
+  background: linear-gradient(to right,  #eff2f2 0%,#89edda 20%,#89edda 63%,#f7f7f7 92%,#f7f7f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+

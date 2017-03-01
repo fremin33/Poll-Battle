@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-  <body bakcground= cl_image_tag("black_jty1oz.jpg") >
+  <body style= "background-image: url(http://res.cloudinary.com/dibgaxttc/image/upload/v1488379929/black_xdijif.jpg); height: 100vh; background-size: cover"> >
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= cloudinary_js_config %>
     <%= javascript_include_tag 'application' %>
-  </body>
+  </body
 </html>
