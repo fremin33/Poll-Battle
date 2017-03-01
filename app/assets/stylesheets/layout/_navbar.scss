@@ -21,7 +21,10 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  position: fixed;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 200px;
 }
 
 /* Navbar right section (with form, links, button) */
