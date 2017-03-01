@@ -4,7 +4,7 @@ class Poll < ApplicationRecord
   has_many :responses
   has_many :votes, through: :responses
 
-  validates :title, :category, :user, presence: true
+  validates :title, presence: true
   validates :title, uniqueness: true
-
+  validates :category_id, presence: true
 end
