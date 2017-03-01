@@ -1,5 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class= "btn btn-default">
-  <%= link_to "start now", categories_path%>
+<div class="banner" style= "background: url(<%= asset_path('black.jpg') %>); height: 100vh; background-size: cover">
+  <div class="home-content">
+    <h1>P'All Battle Home Page</h1>
+    <p>Page d'acceuil à faire ! Une belle home sexy et qui donne envie</p>
+    <div class= "btn navbar-wagon-button">
+      <%= link_to "Open app", categories_path%>
+    </div>
+  </div>
 </div>
+

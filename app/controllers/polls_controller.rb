@@ -1,5 +1,5 @@
 class PollsController < ApplicationController
-  before_action :set_poll, only: [ :show, :create]
+  before_action :set_poll, only: [ :show ]
   skip_before_action :authenticate_user!, only: [:show]
 
   def show

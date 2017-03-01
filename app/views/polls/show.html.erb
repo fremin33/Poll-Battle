@@ -1,26 +1,27 @@
 <h1><%= @poll.title %></h1>
 
-<div class= "container">
-  <div class= "responses">
+<div class= "container-fluide">
+
+  <div class= "box-responses">
+
     <div class="first-response">
-      Response : <%= @first_response.label %>
-      <div class="first-response-count">
-        Votes : <%= @first_response_count %>
+      <div><%= cl_image_tag @first_response.picture.path, height: 200, width: 125 %>
       </div>
-    </div>
-    <div class="second-response">
-      Response <%= @second_response.label %>
-      <div class="second-response-count">
-        Votes : <%= @second_response_count %>
-      </div>
-      <div class="form-vote">
+      <div class="first-response-results-votes">
         <%= simple_form_for([@first_response, @vote]) do |f| %>
           <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
         <% end %>
+        Votes : <%= @first_response_count %>
+      </div>
+    </div>
 
+    <div class="second-response">
+      <div><%= cl_image_tag @second_response.picture.path, height: 200, width: 125 %>
+      <div class="second-response-results-votes">
         <%= simple_form_for([@second_response, @vote]) do |f| %>
           <%= f.submit @second_response.label, class: "btn btn-large btn-primary" %>
         <% end %>
+        Votes : <%= @second_response_count %>
       </div>
     </div>
   </div>
