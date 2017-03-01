@@ -1,0 +1,13 @@
+<%= simple_form_for(@poll) do |f| %>
+  <%= f.input :title  %>
+  <%= f.input :category_id, collection: @categories  %>
+    <%= f.simple_fields_for :response_1 do |response| %>
+      <%= response.input :label %>
+      <%= response.file_field(:picture)%>
+    <% end %>
+    <%= f.simple_fields_for :response_2 do |response| %>
+      <%= response.input :label %>
+      <%= response.file_field(:picture) %>
+    <% end %>
+  <%= f.submit %>
+<% end %>
