@@ -2,3 +2,12 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.banner {
+  display: flex;
+  justify-content: center;
+}
+
+.home-content {
+  margin: 150px auto;
+  text-align: center;
+}

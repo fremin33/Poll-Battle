@@ -1,10 +1,10 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #292933;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: 55px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
@@ -54,15 +54,17 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: none;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #0e4063;
+  -webkit-transition: 0.5s;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background-color: none;
+  border-color: $color2;
+  -webkit-transition: 0.5s;
 }
 
 /* Navbar search form */
@@ -73,13 +75,14 @@
   padding: 0 10px;
   position: relative;
 }
+
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: #E6E6E6;
+  color: white;
   border: none;
   background: transparent;
   position: absolute;
-  right: 14px;
+  right: 25px;
   top: -2px;
   z-index: 1;
 }
@@ -88,34 +91,50 @@
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
-  border-radius: 5px;
+  color: white;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #E6E6E6;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
+  background: none;
+  -webkit-transition: 0.5s;
 }
+
+.navbar-wagon-search-input:hover {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid $color2;
+  -webkit-transition: 0.5s;
+}
+
 .navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid $color2;
+  background-color: none;
 }
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
+  box-shadow: 1px 1px 4px black;
   border-color: #E6E6E6;
 }
+
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  font-weight: bold;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: $color2 !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -128,4 +147,12 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa.fa-bars.dropdown-toggle {
+  color: white;
+}
+
+.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu {
+  background-color: black;
 }

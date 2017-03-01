@@ -1,9 +1,9 @@
-<h1><%= @category.name %></h1>
-<div class= "container">
+
+  <h1><%= @category.name %></h1>
+  <p>List of polls in that area</p>
   <% @category_polls.each do |poll| %>
     <div class= "category">
       <%= link_to poll.title, poll_path(poll)%>
     </div>
   <% end %>
-</div>
 
