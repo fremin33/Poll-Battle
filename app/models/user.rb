@@ -9,4 +9,9 @@ class User < ApplicationRecord
 
   has_many :polls
   has_many :votes
+
+
+  def voted_for(poll)
+    Response.joins(:poll, :votes).find_by(votes: { user: self }, poll: poll)
+  end
 end

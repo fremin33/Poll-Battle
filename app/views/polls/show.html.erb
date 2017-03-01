@@ -1,5 +1,9 @@
 <h1><%= @poll.title %></h1>
 
+<% if user_signed_in? and @current_user_response %>
+  You choosed <%= @current_user_response.label %>
+<% end %>
+
 <div class= "container-fluide">
 
   <div class= "box-responses">
