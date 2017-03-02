@@ -9,6 +9,10 @@ class PollsController < ApplicationController
     @second_response = @responses.last
     @first_response_count = @first_response.votes.size
     @second_response_count = @second_response.votes.size
+
+    if user_signed_in?
+      @current_user_response = current_user.voted_for(@poll)
+    end
   end
 
   def new

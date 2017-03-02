@@ -21,7 +21,10 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  position: fixed;
+  margin-top: -10px;
+  margin-left: -30px;
+  width: 100px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -52,16 +55,16 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
+  border-radius: 2px;
   line-height: 40px;
   background-color: none;
   color: white;
   font-size: 14px;
-  border: 2px solid #0e4063;
+  border: 1px solid #0e4063;
   -webkit-transition: 0.5s;
 }
 .navbar-wagon-button:hover {
-  color: white;
+  color: $color4;
   background-color: none;
   border-color: $color2;
   -webkit-transition: 0.5s;
@@ -78,7 +81,7 @@
 
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: white;
+  color: $color4;
   border: none;
   background: transparent;
   position: absolute;
