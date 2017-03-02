@@ -13,6 +13,8 @@ h1 {
   display: flex;
   justify-content: center;
   box-shadow: 1px 1px 5px grey;
+  border: 1px solid black;
+  -webkit-transition: 0.5s;
 }
 
 .card:hover {
@@ -22,6 +24,7 @@ h1 {
   justify-content: center;
   box-shadow: 1px 1px 5px grey;
   border: 1px solid $color2;
+  -webkit-transition: 0.5s;
 }
 
 .card-title {
@@ -33,6 +36,7 @@ h1 {
   width: 100%;
   top: 40px;
   z-index: 1;
+  -webkit-transition: 0.5s;
 }
 
 .card-title a:visited {
@@ -43,11 +47,13 @@ h1 {
 .card-title a {
   color: grey;
   text-decoration: none;
+  -webkit-transition: 0.5s;
 }
 
 .card-title a:hover {
-  color: $color2;
+  color: $color4;
   text-decoration: none;
+  -webkit-transition: 0.5s;
 }
 
 .card-img img {
