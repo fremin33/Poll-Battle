@@ -1,30 +1,88 @@
-.border-container {
-border-style: solid;
-border-color: white;
-}
+$rotation: 20deg;
 
-.border-row {
-border-style: solid;
-border-color: orange;
-}
+.battle-box {
+  height: 300px;
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  .backgrounds {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: rotate($rotation);
+  }
+  .right, .left {
+    overflow: hidden;
+    position: absolute;
+    background-size: cover, center, fixed;
+  }
+  .left {
+    top: -30px;
+    bottom: -150px;
+    left: -100px;
+    right: 50%;
+    .background {
+      right: -120px;
+      top: 0px;
+      bottom: 50px;
+      left: 50px;
+    }
+  }
+  .right {
+    top: -150px;
+    bottom: -30px;
+    right: -100px;
+    left: 50%;
+    .background {
+      left: -120px;
+      top: 50px;
+      bottom: 0px;
+      right: 50px;
+    }
+  }
 
-.border-col-xs-6 {
-border-style: solid;
-border-color: red;
-  img {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  .background {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    transform: rotate(-$rotation) scale(0.9);
+  }
+
+  .card-content {
+    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    .responseA {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+    }
+    .responseB {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+    }
   }
 }
 
-.color-col {
-border-color: blue;
+.card-poll {
+  height: 20px;
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25px;
 }
 
-.position-absolute {
-position: absolute;
-width: auto;
-bottom: 70px;
-}
 
