@@ -1,3 +1,76 @@
-.container{
-  margin-top: 60px;
+.container {
+}
+
+.row {
+}
+
+#submit {
+  margin: 20px;
+}
+
+.control-label.string.required{
+  color: $color4;
+}
+
+.control-label.select.required {
+  color: $color4;
+}
+
+#poll_title {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+}
+
+#poll_response_1_label {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+}
+
+#poll_response_2_label {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+}
+
+#poll_category_id {
+  background: none;
+  color: white;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+#poll_category_id:focus {
+  background: none;
+  color: black;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+
+
+#p {
+  color: $color4;
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+.header-title > h1 {
+  font-size: 8vw;
+
+}
+
+h3.title-info {
+  color: $color2;
 }
