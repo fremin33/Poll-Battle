@@ -1,33 +1,34 @@
-<h1><%= @poll.title %></h1>
-
-<% if user_signed_in? and @current_user_response %>
-  You choosed <%= @current_user_response.label %>
-<% end %>
-
-<div class="container border-container">
-  <div class="row border-row">
-  <div class="col-xs-6">
-    <%= cl_image_tag @first_response.picture.path %>
-    <div class="position-absolute">
-    <%= simple_form_for([@first_response, @vote]) do |f| %>
-          <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
-    <% end %>
-        Votes : <%= @first_response_count %>
-        </div>
+  <div class="card-poll">
+    <div class="col-xs-12">
+      <p>Created by <%= @poll.user.username %> <%= @poll.title %></p>
+    </div>
   </div>
-
-
-
-
-  <div class="col-xs-6 border-col-xs-6 color-col">
-  <%= cl_image_tag @second_response.picture.path %>
-  <div class="position-absolute text-center">
-   <%= simple_form_for([@second_response, @vote]) do |f| %>
-          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary" %>
+  <div class="battle-box">
+    <div class="backgrounds">
+      <div class="left">
+        <div class="background">
+          <%= cl_image_tag @first_response.picture.path, width: 630, height: 600, crop: :fill %>
+        </div>
+      </div>
+      <div class="right">
+        <div class="background">
+          <%= cl_image_tag @second_response.picture.path, width: 630, height: 600, crop: :fill %>
+        </div>
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="responseA">
+        <%= simple_form_for([@first_response, @vote]) do |f| %>
+        <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
         <% end %>
-        Votes : <%= @second_response_count %>
+        <p style="color: blue;">Votes : <%= @first_response_count %><p>
         </div>
-  </div>
+        <div class="responseB">
+          <%= simple_form_for([@second_response, @vote]) do |f| %>
+          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary" %>
+          <% end %>
+          <p style="color: blue;">Votes : <%= @second_response_count %></p>
+        </div>
+      </div>
+    </div>
 
-  </div>
-</div>
