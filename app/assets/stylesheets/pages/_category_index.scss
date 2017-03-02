@@ -8,35 +8,45 @@ h1 {
 }
 
 .card {
+  padding: 1px 2px;
+  content: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: 1px 1px 5px grey;
+}
+
+.card:hover {
   padding: 1px 1px;
   content: center;
   display: flex;
   justify-content: center;
+  box-shadow: 1px 1px 5px grey;
+  border: 1px solid $color2;
 }
 
 .card-title {
   position: absolute;
-  font-size: 5em;
+  font-size: 3em;
   text-decoration: none;
   text-align:center;
   vertical-align: middle;
   width: 100%;
-  top: 30px;
+  top: 40px;
   z-index: 1;
 }
 
 .card-title a:visited {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
 .card-title a {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
 .card-title a:hover {
-  color: white;
+  color: $color2;
   text-decoration: none;
 }
 
@@ -45,11 +55,15 @@ h1 {
   height: 100%;
   width: 100%;
   background-size: cover;
-  background: linear-gradient(to right,  #eff2f2 0%,#89edda 20%,#89edda 63%,#f7f7f7 92%,#f7f7f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
 
 .col-xs-12.col-sm-6.col-md-3 {
   padding: 0 0;
 }
 
+.gradient {
+  position: absolute;
+  opacity: 0.5;
+}
 
