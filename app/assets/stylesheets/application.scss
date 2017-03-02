@@ -16,11 +16,13 @@
 @import "polls/*";
 @import "categories/*";
 
-
 html {
   background: url(http://res.cloudinary.com/dibgaxttc/image/upload/v1488455204/black_ypejew.jpg) no-repeat center fixed;
   margin:0;
   padding:0;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
-}
+
+@import "devises/*";
+
+
