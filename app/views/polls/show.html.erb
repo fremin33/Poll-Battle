@@ -4,13 +4,13 @@
   You choosed <%= @current_user_response.label %>
 <% end %>
 
-<div class="container">
-  <div class="row">
+<div class="container border-container">
+  <div class="row border-row">
   <div class="col-xs-6">
     <%= cl_image_tag @first_response.picture.path %>
-    <div class="position-absolute" id="#fittext3">
+    <div class="position-absolute">
     <%= simple_form_for([@first_response, @vote]) do |f| %>
-          <%= f.submit @first_response.label, class: "btn btn-large btn-primary btn-responsive" %>
+          <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
     <% end %>
         Votes : <%= @first_response_count %>
         </div>
@@ -19,11 +19,11 @@
 
 
 
-  <div class="col-xs-6 color-col">
+  <div class="col-xs-6 border-col-xs-6 color-col">
   <%= cl_image_tag @second_response.picture.path %>
   <div class="position-absolute text-center">
    <%= simple_form_for([@second_response, @vote]) do |f| %>
-          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary btn-responsive" %>
+          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary" %>
         <% end %>
         Votes : <%= @second_response_count %>
         </div>
