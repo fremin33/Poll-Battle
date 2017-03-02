@@ -6,8 +6,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lalezar');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker');
-$base-font: "Permanent Marker", "Helvetica", "sans-serif";
-$header-font: "Permanent Marker", "Helvetica", "cursive";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans%7COswald%7CPlayfair+Display%7CSource+Serif+Pro');
+$base-font: 'Oswald', "Helvetica", "sans-serif";
+$header-font: "Oswald", "Helvetica", "cursive";
 
 // Local fonts (uncomment following lines)
 // @font-face {

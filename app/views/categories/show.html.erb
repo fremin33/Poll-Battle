@@ -1,8 +1,28 @@
   <h1><%= @category.name %></h1>
-  <p>List of polls in that area</p>
-  <% @category_polls.each do |poll| %>
-    <div class= "category">
-      <%= link_to poll.title, poll_path(poll)%>
-    </div>
-  <% end %>
+  <p class= "text-center">List of polls in that area </p>
 
+<% @category_polls.each do |poll| %>
+  <div class="cardi">
+    <div class="backgrounds">
+      <div class="left">
+        <div class="background">
+          <%= cl_image_tag  poll.responses[0].picture.path, width: 600, height: 500 %>
+        </div>
+      </div>
+      <div class="right">
+        <div class="background">
+          <%= cl_image_tag  poll.responses[1].picture.path, width: 600, height: 500 %>
+        </div>
+      </div>
+    </div>
+
+    <div class="cardi-content">
+      <div class="responseA">
+        <%= poll.responses[0].label %>
+      </div>
+      <div class="responseB">
+        <%= poll.responses[1].label %>
+      </div>
+    </div>
+  </div>
+<% end %>
