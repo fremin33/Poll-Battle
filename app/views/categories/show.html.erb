@@ -2,7 +2,7 @@
   <p class= "text-center">List of polls in that area </p>
 
 <% @category_polls.each do |poll| %>
-<%= link_to poll, poll_path(poll) %>
+<%= link_to poll.title, poll_path(poll) %>
   <div class="cardi">
     <div class="backgrounds">
       <div class="left">
