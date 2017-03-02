@@ -3,8 +3,11 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-$base-font: "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Raleway", "Helvetica", "sans-serif";
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker');
+$base-font: "Permanent Marker", "Helvetica", "sans-serif";
+$header-font: "Permanent Marker", "Helvetica", "cursive";
 
 // Local fonts (uncomment following lines)
 // @font-face {
