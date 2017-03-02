@@ -1,0 +1,80 @@
+$rotation: 20deg;
+
+.cardi {
+  height: 200px;
+  max-width: 950px;
+  margin: auto;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  .backgrounds {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: rotate($rotation);
+  }
+  .right, .left {
+    overflow: hidden;
+    position: absolute;
+    background-size: cover;
+  }
+  .left {
+    top: -30px;
+    bottom: -200px;
+    left: -100px;
+    right: 50%;
+    .background {
+      right: -120px;
+      top: 0px;
+      bottom: 50px;
+      left: 50px;
+    }
+  }
+  .right {
+    top: -150px;
+    bottom: -30px;
+    right: -100px;
+    left: 50%;
+    .background {
+      left: -120px;
+      top: 50px;
+      bottom: 0px;
+      right: 50px;
+    }
+  }
+
+  .background {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    transform: rotate(-$rotation) scale(0.9);
+  }
+
+  .cardi-content {
+    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    margin-right: 23px;
+    .responseA {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+    }
+    .responseB {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 5;
+      padding: 10px;
+    }
+  }
+}
