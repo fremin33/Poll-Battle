@@ -1,29 +1,30 @@
 <h1><%= @poll.title %></h1>
 
+<% if user_signed_in? and @current_user_response %>
+  You choosed <%= @current_user_response.label %>
+<% end %>
 
-<div class= "container-fluide">
+<div class="container">
+  <div class="row">
+  <div class="col-xs-6 text-center">
+    <%= cl_image_tag @first_response.picture.path %>
+    <div class="position-absolute">
+    <%= simple_form_for([@first_response, @vote]) do |f| %>
+          <%= f.submit @first_response.label, class: "btn btn-large btn-primary btn-responsive" %>
+    <% end %>
+        <p>Votes : <%= @first_response_count %></p>
+        </div>
+  </div>
 
-  <div class= "box-responses">
-
-    <div class="first-response">
-      <div><%= cl_image_tag @first_response.picture.path, height: 200, width: 125 %>
-      </div>
-      <div class="first-response-results-votes">
-        <%= simple_form_for([@first_response, @vote]) do |f| %>
-          <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
+  <div class="col-xs-6 color-col text-center">
+  <%= cl_image_tag @second_response.picture.path %>
+  <div class="position-absolute">
+   <%= simple_form_for([@second_response, @vote]) do |f| %>
+          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary btn-responsive" %>
         <% end %>
-        Votes : <%= @first_response_count %>
-      </div>
-    </div>
+      <p> Votes : <%= @second_response_count %></p>
+        </div>
+  </div>
 
-    <div class="second-response">
-      <div><%= cl_image_tag @second_response.picture.path, height: 200, width: 125 %>
-      <div class="second-response-results-votes">
-        <%= simple_form_for([@second_response, @vote]) do |f| %>
-          <%= f.submit @second_response.label, class: "btn btn-large btn-primary" %>
-        <% end %>
-        Votes : <%= @second_response_count %>
-      </div>
-    </div>
   </div>
 </div>
