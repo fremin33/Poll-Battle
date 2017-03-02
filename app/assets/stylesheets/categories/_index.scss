@@ -1,10 +1,6 @@
-h1 {
-  margin-top: 60px;
-  margin-bottom: 30px;
-  text-align: center;
-}
 .container-fluide {
   flex-wrap: wrap;
+  background-color: none;
 }
 
 .card {
@@ -15,6 +11,8 @@ h1 {
   box-shadow: 1px 1px 5px grey;
   border: 1px solid black;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card:hover {
@@ -25,6 +23,8 @@ h1 {
   box-shadow: 1px 1px 5px grey;
   border: 1px solid $color2;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card-title {
@@ -37,6 +37,8 @@ h1 {
   top: 40px;
   z-index: 1;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card-title a:visited {
@@ -48,12 +50,16 @@ h1 {
   color: grey;
   text-decoration: none;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card-title a:hover {
   color: $color4;
   text-decoration: none;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card-img img {
