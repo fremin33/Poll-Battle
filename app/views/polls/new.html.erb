@@ -1,21 +1,33 @@
 <div class="header-title" style= "margin-top: 60px; margin-bottom: 30px; text-align: center;">
   <h1>Fill up the form and submit</h1>
 </div>
-<div class="container">
   <%= simple_form_for(@poll) do |f| %>
   <%= f.error_notification %>
-  <div class="row">
-    <%= f.input :title  %>
-    <%= f.input :category_id, collection: @categories  %>
-  </div>
-      <%= f.simple_fields_for :response_1 do |response| %>
-        <%= response.input :label %>
-        <%= response.file_field(:picture)%>
-      <% end %>
-      <%= f.simple_fields_for :response_2 do |response| %>
-        <%= response.input :label %>
-        <%= response.file_field(:picture) %>
-      <% end %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.input :title, label: "Battle title"  %>
+      </div>
+      <div class="col-xs-6">
+        <%= f.input :category_id, collection: @categories, label: "Poll category"  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.simple_fields_for :response_1 do |response| %>
+          <%= response.input :label, label: "Picture opponent 1" %>
+          <%= response.file_field(:picture)%>
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+        <%= f.simple_fields_for :response_2 do |response| %>
+          <%= response.input :label, label: "Picture opponent 2"  %>
+          <%= response.file_field(:picture) %>
+        <% end %>
+      </div>
+    </div>
 </div>
+    <div class="submit text-center">
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
