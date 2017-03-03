@@ -57,6 +57,7 @@ $break-position: 60%;
   .right-content {
     bottom: 0;
     right: 0;
+    text-align: right;
   }
 
   .left-content {
@@ -71,5 +72,11 @@ $break-position: 60%;
     &:active {
       background: rgba(red, 0.3);
     }
+  }
+  h1 {
+    font-size: 8vw;
+  }
+  p {
+    font-size: 4vw;
   }
 }

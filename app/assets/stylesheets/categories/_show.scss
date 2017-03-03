@@ -1,80 +1,79 @@
-$rotation: 20deg;
+$break-position: 60%;
 
-.cardi {
+%cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cardc {
+  margin-bottom: 20px;
+  max-width: 2000px;
   height: 200px;
-  max-width: 950px;
-  margin: auto;
-  margin-bottom: 40px;
   position: relative;
-  overflow: hidden;
-  .backgrounds {
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: rotate($rotation);
-  }
-  .right, .left {
-    overflow: hidden;
-    position: absolute;
-    background-size: cover;
-  }
-  .left {
-    top: -30px;
-    bottom: -200px;
-    left: -100px;
-    right: 50%;
-    .background {
-      right: -120px;
-      top: 0px;
-      bottom: 50px;
-      left: 50px;
-    }
-  }
-  .right {
-    top: -150px;
-    bottom: -30px;
-    right: -100px;
-    left: 50%;
-    .background {
-      left: -120px;
-      top: 50px;
-      bottom: 0px;
-      right: 50px;
-    }
+  color: white;
+  @media (max-width: 800px) {
+    height: 150px;
   }
 
-  .background {
-    position: absolute;
+  .clip-left, .clip-right {
+    @extend %cover;
+  }
+
+  .clip-left {
+    clip-path: url(#clip-left-path);
+  }
+
+  .clip-right {
+    clip-path: url(#clip-right-path);
+  }
+
+  .left-wrapper, .right-wrapper {
+    @extend %cover;
     background-size: cover;
     background-position: center center;
-    transform: rotate(-$rotation) scale(0.9);
+  }
+  .left-wrapper {
+    right: 100% - $break-position;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .right-wrapper {
+    left: 100% - $break-position;
+        img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  .cardi-content {
-    z-index: 1;
-    color: white;
+  .left-content, .right-content {
+    padding: 20px;
     position: absolute;
-    top: 0;
+  }
+
+  .right-content {
     bottom: 0;
-    left: 0;
     right: 0;
-    font-size: 20px;
-    margin-right: 23px;
-    .responseA {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 10px;
+  }
+
+  .left-content {
+    top: 0;
+    left: 0;
+  }
+  .cardc-button {
+    @extend %cover;
+    width: 100%;
+    background: transparent;
+    border: none;
+    &:active {
+      background: rgba(red, 0.3);
     }
-    .responseB {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 5;
-      padding: 10px;
-    }
+  }
+  h1 {
+    font-size: 3vw;
   }
 }
