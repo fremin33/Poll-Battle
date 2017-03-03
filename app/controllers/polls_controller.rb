@@ -9,7 +9,9 @@ class PollsController < ApplicationController
     @second_response = @responses.last
     @first_response_count = @first_response.votes.size
     @second_response_count = @second_response.votes.size
-
+    @total_response = @first_response_count.to_f + @second_response_count.to_f
+    @first_response_percent = ((@first_response_count.to_f / @total_response.to_f) * 100).round(2)
+    @second_response_percent = ((@second_response_count.to_f / @total_response.to_f) * 100).round(2)
     if user_signed_in?
       @current_user_response = current_user.voted_for(@poll)
     end

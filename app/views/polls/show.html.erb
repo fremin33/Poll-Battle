@@ -1,34 +1,38 @@
-  <div class="card-poll">
-    <div class="col-xs-12">
-      <p>Created by <%= @poll.user.username %> <%= @poll.title %></p>
+<div class="carda">
+  <div class="clip-left">
+    <div class="left-wrapper">
+      <%= cl_image_tag @first_response.picture.path%>
+      <%= simple_form_for([@first_response, @vote]) do |f| %>
+        <%= f.submit "", class: "carda-button" %>
+      <% end %>
+      <div class="left-content">
+        <h1><%= @first_response.label %></h1>
+        <p>Votes : <%= @first_response_count  %></p>
+        <p><%= @first_response_percent %> %</p>
+      </div>
     </div>
   </div>
-  <div class="battle-box">
-    <div class="backgrounds">
-      <div class="left">
-        <div class="background">
-          <%= cl_image_tag @first_response.picture.path, width: 630, height: 600, crop: :fill %>
-        </div>
-      </div>
-      <div class="right">
-        <div class="background">
-          <%= cl_image_tag @second_response.picture.path, width: 630, height: 600, crop: :fill %>
-        </div>
-      </div>
-    </div>
-    <div class="card-content">
-      <div class="responseA">
-        <%= simple_form_for([@first_response, @vote]) do |f| %>
-        <%= f.submit @first_response.label, class: "btn btn-large btn-primary" %>
-        <% end %>
-        <p style="color: blue;">Votes : <%= @first_response_count %><p>
-        </div>
-        <div class="responseB">
-          <%= simple_form_for([@second_response, @vote]) do |f| %>
-          <%= f.submit @second_response.label, class: "btn  btn-large btn-primary" %>
-          <% end %>
-          <p style="color: blue;">Votes : <%= @second_response_count %></p>
-        </div>
+  <div class="clip-right">
+    <div class="right-wrapper">
+      <%= cl_image_tag @second_response.picture.path %>
+      <%= simple_form_for([@second_response, @vote]) do |f| %>
+        <%= f.submit "", class: "carda-button" %>
+      <% end %>
+      <div class="right-content">
+        <h1><%= @second_response.label %></h1>
+        <p>Votes : <%= @second_response_count  %></p>
+        <p><%= @second_response_percent %> %</p>
       </div>
     </div>
-
+  </div>
+</div>
+<svg class="clip-svg" width="0" height="0">
+  <defs>
+    <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
+    </clipPath>
+    <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
+    </clipPath>
+  </defs>
+</svg>
