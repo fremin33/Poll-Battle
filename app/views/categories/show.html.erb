@@ -1,29 +1,44 @@
+<div class="header-title text-center">
   <h1><%= @category.name %></h1>
-  <p class= "text-center">List of polls in that area </p>
+</div>
 
-<% @category_polls.each do |poll| %>
-<%= link_to poll.title, poll_path(poll) %>
-  <div class="cardi">
-    <div class="backgrounds">
-      <div class="left">
-        <div class="background">
-          <%= cl_image_tag  poll.responses[0].picture.path, width: 600, height: 500 %>
+<div class="container-fluid">
+  <div class="row">
+    <% @category_polls.each do |poll| %>
+    <%= link_to poll_path(poll) do %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="cardc">
+        <div class="clip-left">
+          <div class="left-wrapper">
+            <%= cl_image_tag poll.responses[0].picture.path%>
+            <div class="left-content">
+              <h1><%= poll.responses[0].label %></h1>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="right">
-        <div class="background">
-          <%= cl_image_tag  poll.responses[1].picture.path, width: 600, height: 500 %>
+        <div class="clip-right">
+          <div class="right-wrapper">
+            <%= cl_image_tag poll.responses[1].picture.path %>
+            <div class="right-content">
+              <h1><%= poll.responses[1].label %></h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="cardi-content">
-      <div class="responseA">
-        <%= poll.responses[0].label %>
-      </div>
-      <div class="responseB">
-        <%= poll.responses[1].label %>
-      </div>
-    </div>
+    <% end %>
+    <% end %>
   </div>
-<% end %>
+</div>
+<svg class="clip-svg" width="0" height="0">
+  <defs>
+    <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
+    </clipPath>
+    <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
+    </clipPath>
+  </defs>
+</svg>
+
+
