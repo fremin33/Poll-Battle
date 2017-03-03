@@ -17,14 +17,19 @@
 @import "categories/*";
 @import "devises/*";
 
+
+// Common parts to all pages
 html {
-  background: url(http://res.cloudinary.com/dibgaxttc/image/upload/v1488455204/black_ypejew.jpg) no-repeat center fixed;
+  background: url(http://res.cloudinary.com/dibgaxttc/image/upload/v1488496517/new_black_ihve2h.jpg) no-repeat center fixed;
   margin:0;
   padding:0;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
 }
 
+body {
+  margin-top: 55px;
+}
 
 
 
