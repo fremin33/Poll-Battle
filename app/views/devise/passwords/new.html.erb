@@ -1,6 +1,6 @@
 <h2 class="formTitle">Forgot your password?</h2>
 
-<div class="block" style="padding-top: 0; padding-bottom: 0">
+<div class="block" style="padding-top: 0; padding-bottom: 0; width: 200px; margin-right: auto; margin-left: auto;">
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -16,6 +16,6 @@
 </div>
 
 
- <div class="shared_log" style="background: none; border:none;">
+<div class="shared_log" style="background: none; border:none;">
     <div class="form-group"><%= render "devise/shared/links" %></div>
-  </div>
+</div>
