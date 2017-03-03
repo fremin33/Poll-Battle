@@ -1,5 +1,5 @@
 <div class="header-title text-center">
-  <h1>All areas</h1>
+  <h1>All Themas</h1>
 </div>
 <div class= "container-fluide">
   <div class="row">
@@ -13,6 +13,9 @@
           </div>
           <div class="card-title">
             <%= link_to category.name, category_path(category) %>
+          </div>
+          <div class="poll-count">
+          <p><%= category.polls.size %> battles</p>
           </div>
         </div>
       </div>

@@ -10,4 +10,37 @@
 .home-content {
   margin: 150px auto;
   text-align: center;
+  & h1 {
+    text-shadow: 1px 1px 20px black;
+    color: white;
+    font-size: 8em;
+  }
+  & p {
+    color: $color4;
+    font-size: 1.5em;
+  }
+}
+
+#open {
+  width: 40%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  padding-bottom: 15px;
+  font-size: 2em;
+  font-color: #0e4063;
+  text-decoration: none;
+  border-radius: 2px;
+  border :none;
+  background-color: white;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+  &:hover {
+    border: none;
+    background-color: grey;
+  }
+  & a {
+    font-color: #0e4063;
+    text-decoration: none;
+  }
 }
