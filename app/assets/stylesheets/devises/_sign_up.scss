@@ -10,3 +10,11 @@
   align-items: center;
   justify-content: center;
 }
+
+#user_username, #user_email, #user_password, #user_password_confirmation {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+}
