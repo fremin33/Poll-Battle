@@ -46,31 +46,4 @@ Category.new(name: "Television").save
 Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488554416/television_zieqaf.jpg"
 
 
-Poll.new(title: "A vs B", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "C vs D", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "E vs F", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "G vs H", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "I vs J", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "K vs L", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "M vs N", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "O vs P", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "Q vs R", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "S vs T", user: User.all.sample, category: Category.all.sample).save
-Poll.new(title: "U vs V", user: User.all.sample, category: Category.all.sample).save
-
-
-
-Poll.all.each do |poll|
-  response = Response.new(label: poll.title.first, poll: poll)
-  response.picture_url = "http://www.fiche-maternelle.com/coloriage-#{poll.title.first.downcase}.jpg"
-  response.save
-
-  response = Response.new(label: poll.title.last, poll: poll)
-  response.picture_url = "http://www.fiche-maternelle.com/coloriage-#{poll.title.last.downcase}.jpg"
-  response.save
-end
-
-2500.times do
-  Vote.new(user: User.all.sample, response: Response.all.sample).save
-end
 
