@@ -1,18 +1,21 @@
-<h2>Sign up</h2>
+<h2 class="formTitle">Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="block" style="padding-top: 0; padding-bottom: 0">
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification style: 'width:200px' %>
 
   <div class="form-inputs">
-    <%= f.input :username, required: true, autofocus: true  %>
-    <%= f.input :email, required: true%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :username, required: true, autofocus: true, required: false  %>
+    <%= f.input :email, required: true, required: false%>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), required: false%>
+    <%= f.input :password_confirmation, required: true, required: false %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", style: 'width:100%'%>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
