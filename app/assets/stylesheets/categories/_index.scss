@@ -7,6 +7,13 @@
   text-shadow: 1px 1px 20px black;
 }
 
+.card-img img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
 .card {
   content: center;
   display: flex;
@@ -17,61 +24,51 @@
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
-}
-
-.card:hover {
-  display: flex;
-  content: center;
-  justify-content: center;
-  border-radius: 2px;
-  border: 2px solid $color4;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s;
+  &:hover {
+    display: flex;
+    content: center;
+    justify-content: center;
+    border-radius: 2px;
+    border: 2px solid $color4;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+  }
 }
 
 .card-title {
-  position: absolute;
-  font-size: 3em;
-  text-decoration: none;
-  text-align:center;
-  vertical-align: middle;
-  width: 30%;
-  margin: auto;
-  top: 40px;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-
-.card-title a {
-  text-shadow: 1px 1px black;
-  text-decoration: none;
-  color: white;
+    position: absolute;
+    font-size: 3em;
+    text-decoration: none;
+    text-align:center;
+    vertical-align: middle;
+    width: 30%;
+    margin: auto;
+    top: 40px;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+  & a {
+    text-shadow: 1px 1px black;
+    text-decoration: none;
+    color: white;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+  }
+  & a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  & a:hover {
+    color: $color4;
+    text-decoration: none;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
   }
-
-.card-title a:hover {
-  color: $color4;
-  text-decoration: none;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
 }
 
-.card-title a:visited {
-  color: white;
-  text-decoration: none;
-}
-
-.card-img img {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-}
 
 .col-xs-12.col-sm-6.col-md-3 {
   padding: 0 0;
