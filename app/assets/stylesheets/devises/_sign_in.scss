@@ -21,14 +21,15 @@
   justify-content: center;
   border-color: $color2;
   -webkit-transition: 0.5s;
-  margin: 0;
+  margin: auto;
   padding: 0;
   padding-top: 20px;
   background: none;
   border: none;
+  width: 250px;
 }
 
 #new_user input {
-  width: 200px;
+  width: 250px;
 
 }
