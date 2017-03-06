@@ -5,7 +5,7 @@
   transition: all 0.3s ease;
   display: flex;
   height: 55px;
-  padding: 0px 30px;
+
   align-items: center;
   justify-content: space-between;
 }
@@ -159,3 +159,9 @@
 .dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu {
   background-color: black;
 }
+
+.nav-item {
+      display: inline-block;
+      width: 15%;
+      text-align: center;
+    }
