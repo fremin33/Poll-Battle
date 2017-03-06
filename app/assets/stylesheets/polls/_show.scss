@@ -1,4 +1,4 @@
-$break-position: 60%;
+$break-position: 70%;
 
 %cover {
   position: absolute;
@@ -52,12 +52,16 @@ $break-position: 60%;
   .left-content, .right-content {
     padding: 20px;
     position: absolute;
+      animation: slideLeft 1s both;
+  animation-delay: 1s;
   }
 
   .right-content {
     bottom: 0;
     right: 0;
     text-align: right;
+      animation: slideRight 1s both;
+  animation-delay: 1s;
   }
 
   .left-content {
@@ -74,4 +78,135 @@ $break-position: 60%;
     }
   }
 
+}
+
+.progress-bar {
+  animation: progress 1s both;
+  animation-delay: 0.5s;
+  z-index: 2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  animation: scale 1s both;
+  padding-top: 9px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  z-index: 30;
+  width: 40px;
+  margin-left: -20px;
+  height: 40px;
+  margin-top: -20px;
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.progress-bar-left {
+  height: 25px;
+  width: 100%;
+  z-index: 3;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar-right {
+  height: 25px;
+  width: 100%;
+  z-index: 3;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+.progress-bar-container {
+  width: 50%;
+  height: 20px;
+  background-color: #e7edf4;
+  border-radius: 99px;
+}
+
+.progress-bar-left {
+  height: 20px;
+  width: 100%;
+  background-color: #00c0fb;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+.progress-bar-right {
+  height: 20px;
+  width: 100%;
+  background-color: #00c0fb;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+  right: 0;
+}
+
+
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes progress {
+  0% {
+    -webkit-clip-path: polygon(50.2% 50%, 50.2% 50%, 49.8% 50%, 49.8% 50%);
+  }
+  60% {
+    -webkit-clip-path: polygon(50.2% 0, 50.2% 100%, 49.8% 100%, 49.8% 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(70.2% 0, 30.2% 100%, 29.8% 100%, 69.8% 0%);
+  }
+}
+@-webkit-keyframes slideLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -70%;
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -70%;
+  }
+}
+@-webkit-keyframes h1Left {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: 10%;
+  }
+}
+@-webkit-keyframes h1Right {
+  0% {
+    right: 5%;
+  }
+  100% {
+    right: 10%;
+  }
 }
