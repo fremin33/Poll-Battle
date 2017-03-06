@@ -6,62 +6,91 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+    <!-- Home -->
+    <div class="home">
+      <li style="display:block;">
+        <%= link_to root_path do %>
+            <i class="navbar-icons fa fa-home" aria-hidden="true"></i>
+        <% end %>
+      </li>
+    </div>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+        <!-- Profile picture and dropdown -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "#" do %>
+                    <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#" do %>
+                    <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
     <% else %>
 
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <!-- Login text link -->
+        <%= link_to new_user_session_path do %>
+            <i class="navbar-icons fa fa-user" aria-hidden="true"></i>
+        <% end %>
 
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Create uR Poll"), new_poll_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to new_poll_path do %>
+        <i class="navbar-icons  fa fa-plus-square" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to categories_path do %>
+        <i class="navbar-icons  fa fa-spinner" aria-hidden="true"></i>
+    <% end %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+  <div class="hidden-md hidden-lg container" style="color:white; width: 100%">
+
+    <div class="nav-item">
+      <%= image_tag 'logo.png', style: 'width: 40px; height:40px'%>
+
     </div>
+
+    <%= link_to root_path,  class: 'nav-item' do %>
+        <i class="fa fa-home" aria-hidden="true"></i>
+    <% end %>
+
+    <% if user_signed_in? %>
+
+    <% else %>
+        <%= link_to new_user_session_path, class: 'nav-item' do %>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        <% end %>
+    <% end %>
+
+    <%= link_to new_poll_path,  class: 'nav-item' do %>
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to categories_path,  class: 'nav-item' do %>
+        <i class="fa fa-spinner" aria-hidden="true"></i>
+    <% end %>
+
   </div>
 </div>
 
