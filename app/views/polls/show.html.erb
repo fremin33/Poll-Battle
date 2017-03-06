@@ -1,4 +1,11 @@
 <div class="carda">
+  <div class="circle">
+    VS
+  </div>
+  <div class="progress-bar"></div>
+  <div class="progress-bar-left"></div>
+  <div class="progress-bar-right"></div>
+
   <div class="clip-left">
     <div class="left-wrapper">
       <%= cl_image_tag @first_response.picture.path%>
@@ -12,6 +19,7 @@
       </div>
     </div>
   </div>
+
   <div class="clip-right">
     <div class="right-wrapper">
       <%= cl_image_tag @second_response.picture.path %>
@@ -29,10 +37,10 @@
 <svg class="clip-svg" width="0" height="0">
   <defs>
     <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
-      <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
+      <polygon points="0.7 0, 0.3 1, 0 1, 0 0">
     </clipPath>
     <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
-      <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
+      <polygon points="1 0, 1 1, 0.3 1, 0.7 0">
     </clipPath>
   </defs>
 </svg>
