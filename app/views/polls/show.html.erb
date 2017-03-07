@@ -42,5 +42,15 @@
     </clipPath>
   </defs>
 </svg>
+<div id="reviews">
+  <% if @poll.reviews.blank? %>
+    Be the first to leave a comment for this battle
+  <% else %>
+    <% @poll.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+<%= render 'reviews/form', poll: @poll, review: @review %>
 
 

@@ -1,0 +1,4 @@
+<%= simple_form_for [poll, review] do |f| %>
+  <%= f.input :content, label: "Comment:" %>
+  <%= f.submit "Add a comment", class: "btn btn-primary" %>
+<% end %>

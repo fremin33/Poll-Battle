@@ -7,6 +7,7 @@ class PollsController < ApplicationController
 
   def show
     @vote = Vote.new
+    @review = Review.new
     @responses = @poll.responses
     @first_response = @responses.first
     @second_response = @responses.last
