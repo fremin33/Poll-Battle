@@ -34,40 +34,40 @@
       -moz-transition: 0.5s;
       -o-transition: 0.5s;
   }
+  .card-title {
+      position: absolute;
+      font-size: 3em;
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+      margin: auto;
+      top: 40px;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+    & a {
+      text-shadow: 1px 1px black;
+      text-decoration: none;
+      color: white;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    & a:visited {
+      color: white;
+      text-decoration: none;
+    }
+    & a:hover {
+      color: $color4;
+      text-decoration: none;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+    }
+  }
 }
 
-.card-title {
-    position: absolute;
-    font-size: 3em;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    width: 100%;
-    margin: auto;
-    top: 40px;
-      -webkit-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -o-transition: 0.5s;
-  & a {
-    text-shadow: 1px 1px black;
-    text-decoration: none;
-    color: white;
-      -webkit-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -o-transition: 0.5s;
-  }
-  & a:visited {
-    color: white;
-    text-decoration: none;
-  }
-  & a:hover {
-    color: $color4;
-    text-decoration: none;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s;
-  }
-}
 
 .poll-count {
   position: absolute;
