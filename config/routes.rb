@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
-
-  get 'reviews/create'
-
-  get 'votes/create'
-
   get 'polls/user'
 
   devise_for :users,

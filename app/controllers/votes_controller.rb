@@ -12,7 +12,6 @@ class VotesController < ApplicationController
       @vote.user = current_user
     end
     @vote.save
-
     redirect_to poll_path(@response.poll)
   end
 end
