@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+
+  get 'reviews/create'
+
   get 'votes/create'
 
   devise_for :users,
@@ -7,7 +11,9 @@ Rails.application.routes.draw do
   root to: 'polls#index'
 
   resources :categories
-  resources :polls
+  resources :polls do
+    resources :reviews, only: [ :new, :create ]
+  end
   resources :responses do
     resources :votes
   end
