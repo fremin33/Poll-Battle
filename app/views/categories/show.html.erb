@@ -6,8 +6,8 @@
   <div class="row">
     <% @category_polls.each do |poll| %>
     <%= link_to poll_path(poll) do %>
-    <div class="col-xs-12 col-sm-6">
-      <div class="cardc">
+    <div class="col-sm-6 col-md-3 ">
+      <div class="cardc1">
         <div class="clip-left">
           <div class="left-wrapper">
             <%= cl_image_tag poll.responses[0].picture.path%>
@@ -40,5 +40,4 @@
     </clipPath>
   </defs>
 </svg>
-
 
