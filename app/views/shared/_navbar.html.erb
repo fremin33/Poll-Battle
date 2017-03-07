@@ -1,12 +1,30 @@
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
   <header class="avatar">
-    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
-    <h2>John D.</h2>
+    <% if user_signed_in? %>
+      <% if current_user.facebook_picture_url? %>
+        <%= image_tag current_user.facebook_picture_url %>
+      <% else %>
+        <%= image_tag "http://placehold.it/30x30" %>
+      <% end %>
+    <% else %>
+      <%= image_tag "http://placehold.it/30x30" %>
+    <% end %>
+      <% if user_signed_in? %>
+        <h2><%= current_user.username %></h2>
+      <% else %>
+        <h2></h2>
+      <% end %>
   </header>
+
   <ul>
+     <li><span>
+      <%= link_to root_path do %>
+      <%= "All Polls" %>
+      <% end %>
+    </span></li>
     <li><span>
-          <%= link_to categories_path do %>
+      <%= link_to categories_path do %>
       <%= "Categories" %>
       <% end %>
     </span></li>
@@ -15,17 +33,18 @@
       <%= "Dashboard" %>
       <% end %>
     </span></li>
-    <li><span>
-      <%= link_to new_user_session_path do %>
-      <%= "Sign in" %>
-      <% end %>
-    </span></li>
+    <% if user_signed_in? %>
     <li><span>
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <%="Log out"%>
+      <%="Log out"%>
       <% end %>
     </span></li>
-  </ul>
+    <% else %>
+  <li></span>
+  <%= link_to new_user_session_path do %>
+  <%= "Sign in" %>
+  <% end %>
+</span></li>
+<% end %>
+</ul>
 </nav>
-
-

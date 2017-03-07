@@ -78,28 +78,8 @@ main{
       background-size:auto 20px;
       transition:all 0.15s linear;
       cursor:pointer;
-
-      &.icon-dashboard{
-        background-image:url(@icon-url-dashboard);
-      }
-      &.icon-customers{
-        background-image:url(@icon-url-customers);
-      }
-      &.icon-users{
-        background-image:url(@icon-url-users);
-      }
-      &.icon-settings{
-        background-image:url(@icon-url-settings);
-      }
-
-      &:hover{
-        background-color:rgba(0,0,0,0.1);
-      }
-
-      &:focus{
-        outline:none;
-      }
-
+      color: white;
+      text-decoration: none;
     }
   }
 }
