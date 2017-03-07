@@ -5,6 +5,16 @@ class PollsController < ApplicationController
     @polls = Poll.all
   end
 
+  def user
+    @user = current_user
+    if !current_user.nil?
+      @polls = Poll.where(user: @user)
+      @user_votes = @user.votes.size
+      @user_polls = @user.polls.size
+      @user_reviews = @user.reviews.size
+    end
+  end
+
   def show
     @vote = Vote.new
     @review = Review.new
