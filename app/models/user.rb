@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
 
   validates :email, :password, :username,  presence: true
-  validates :email, :username, uniqueness: true
+  validates :email,  uniqueness: true
 
   has_many :polls
   has_many :votes
