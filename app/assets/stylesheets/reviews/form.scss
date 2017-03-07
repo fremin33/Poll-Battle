@@ -1,0 +1,28 @@
+.btn-review {
+  background-color: $color4;
+  font-color: white;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+#reviews {
+  margin: 10px 30px;
+}
+
+input#review_content {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom : 2px solid white;
+  box-shadow: none;
+  width: 100%;
+  margin: auto auto;
+}
+
+#comment-box {
+  background-color: black;
+  margin: 10px 30px;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}

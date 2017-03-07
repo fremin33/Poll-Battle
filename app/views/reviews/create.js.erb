@@ -1,0 +1,3 @@
+$('#reviews').append("<%= j render 'reviews/show', review: @review %>");
+var last_paragraphe = $('#reviews').find("p").last().hide();
+last_paragraphe.slideDown();

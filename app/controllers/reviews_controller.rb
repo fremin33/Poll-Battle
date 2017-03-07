@@ -11,9 +11,15 @@ class ReviewsController < ApplicationController
     @review.poll = @poll
     @review.user = current_user
     if @review.save
-      redirect_to poll_path(@poll)
+      respond_to do |format|
+        format.html { redirect_to poll_path(@poll) }
+        format.js
+      end
     else
-      render 'polls/show'
+      respond_to do |format|
+        format.html { render 'polls/show' }
+        format.js
+      end
     end
   end
 
