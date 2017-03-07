@@ -5,9 +5,27 @@
     <h2>John D.</h2>
   </header>
   <ul>
-    <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-    <li tabindex="0" class="icon-customers"><span>Customers</span></li>
-    <li tabindex="0" class="icon-users"><span>Users</span></li>
-    <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+    <li><span>
+          <%= link_to categories_path do %>
+      <%= "Categories" %>
+      <% end %>
+    </span></li>
+    <li><span>
+      <%= link_to polls_user_path do %>
+      <%= "Dashboard" %>
+      <% end %>
+    </span></li>
+    <li><span>
+      <%= link_to new_user_session_path do %>
+      <%= "Sign in" %>
+      <% end %>
+    </span></li>
+    <li><span>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <%="Log out"%>
+      <% end %>
+    </span></li>
   </ul>
 </nav>
+
+

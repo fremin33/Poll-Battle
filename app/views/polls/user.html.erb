@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="main">
+    <p class="description">Welcome to your own interface. You can modify your poll here !</p>
+
+    <div class="stats-container">
+      <div class="stat">
+        <div class="number">
+          <% if @user_votes.nil? %>
+            0
+          <% else %>
+            <%= @user_votes %>
+          <% end %>
+        </div>
+        <div class="text">Votes</div>
+      </div>
+
+      <div class="stat">
+        <div class="number">
+          <% if @user_polls.nil? %>
+            0
+          <% else %>
+            <%= @user_polls %>
+          <% end %>
+        </div>
+        <div class="text">Battle</div>
+      </div>
+
+      <div class="stat active">
+        <div class="number">
+          <% if @user_reviews.nil? %>
+            0
+          <% else %>
+            <%= @user_reviews %>
+          <% end %>
+        </div>
+        <div class="text">Reviews</div>
+      </div>
+
+      <div class="stat">
+        <div class="number">0</div>
+        <div class="text">Following</div>
+      </div>
+    </div>
+
+    <% @polls.each do |poll| %>
+    <%= link_to poll_path(poll) do %>
+      <div class="cardf">
+        <div class="clip-left">
+          <div class="left-wrapper">
+            <%= cl_image_tag poll.responses[0].picture.path%>
+            <div class="left-content">
+              <h1><%= poll.responses[0].label %></h1>
+            </div>
+          </div>
+        </div>
+        <div class="clip-right">
+          <div class="right-wrapper">
+            <%= cl_image_tag poll.responses[1].picture.path %>
+            <div class="right-content">
+              <h1><%= poll.responses[1].label %></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+
+
+  </div>
+</div>
+
+<svg class="clip-svg" width="0" height="0">
+  <defs>
+    <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
+    </clipPath>
+    <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
+      <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
+    </clipPath>
+  </defs>
+</svg>
