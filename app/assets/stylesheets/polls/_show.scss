@@ -52,16 +52,12 @@ $break-position: 70%;
   .left-content, .right-content {
     padding: 20px;
     position: absolute;
-      animation: slideLeft 1s both;
-  animation-delay: 1s;
   }
 
   .right-content {
     bottom: 0;
     right: 0;
     text-align: right;
-      animation: slideRight 1s both;
-  animation-delay: 1s;
   }
 
   .left-content {
@@ -84,10 +80,10 @@ $break-position: 70%;
   animation: progress 1s both;
   animation-delay: 0.5s;
   z-index: 2;
-  background-color: black;
   position: absolute;
   width: 100%;
   height: 100%;
+  background-color: black;
 }
 
 .circle {
@@ -97,7 +93,7 @@ $break-position: 70%;
   color: white;
   font-size: 18px;
   position: absolute;
-  z-index: 30;
+  z-index: 3;
   width: 40px;
   margin-left: -20px;
   height: 40px;
@@ -109,73 +105,26 @@ $break-position: 70%;
   text-align: center;
 }
 
-.progress-bar-left {
-  height: 25px;
-  width: 100%;
-  z-index: 3;
-  background-color: red;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.progress-bar-right {
-  height: 25px;
-  width: 100%;
-  z-index: 3;
-  background-color: red;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-
-.progress-bar-container {
-  width: 50%;
-  height: 20px;
-  background-color: #e7edf4;
-  border-radius: 99px;
-}
-
-.progress-bar-left {
-  height: 20px;
-  width: 100%;
-  background-color: #00c0fb;
-  position: absolute;
-  width: 100%;
-  z-index: 3;
-  top: 0;
-  left: 0;
-}
-.progress-bar-right {
-  height: 20px;
-  width: 100%;
-  background-color: #00c0fb;
-  position: absolute;
-  width: 100%;
-  z-index: 3;
-  bottom: 0;
-  right: 0;
-}
-
 
 @-webkit-keyframes scale {
   0% {
     transform: scale(0);
   }
   100% {
-    transform: scale(1);
+    transform: scale(2);
   }
 }
 @-webkit-keyframes progress {
   0% {
     -webkit-clip-path: polygon(50.2% 50%, 50.2% 50%, 49.8% 50%, 49.8% 50%);
+
   }
   60% {
-    -webkit-clip-path: polygon(50.2% 0, 50.2% 100%, 49.8% 100%, 49.8% 0);
+    -webkit-clip-path: polygon(49.8% 0, 49.8% 100%, 50.2% 100%, 50.2% 0);
   }
   100% {
     -webkit-clip-path: polygon(70.2% 0, 30.2% 100%, 29.8% 100%, 69.8% 0%);
+
   }
 }
 @-webkit-keyframes slideLeft {
@@ -210,3 +159,4 @@ $break-position: 70%;
     right: 10%;
   }
 }
+
