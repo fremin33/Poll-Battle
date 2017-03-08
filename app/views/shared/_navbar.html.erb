@@ -21,7 +21,7 @@
         <% if current_user.facebook_picture_url? %>
           <%= image_tag current_user.facebook_picture_url %>
         <% else %>
-          <%= image_tag "http://placehold.it/30x30" %>
+          <%= cl_image_tag current_user.picture.path %>
         <% end %>
       <% else %>
         <%= image_tag "http://placehold.it/30x30" %>
