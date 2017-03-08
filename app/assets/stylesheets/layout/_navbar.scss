@@ -13,6 +13,65 @@ body{
   background-size: cover; /* version standardisée */
 }
 
+.top-encart {
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+
+}
+ .top-encart h3 {
+    margin: 2px;
+    text-align: center;
+    color: black;
+ }
+
+.logo-box {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+  .first-box {
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
+
+  .separator {
+    position: absolute;
+    height: 40px;
+    border-left: 2px solid black;
+    left: 110px;
+    top: 10px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
+
+  .second-box {
+    position: absolute;
+    top: 15px;
+    left: 116px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
+}
+
 main{
   position:relative;
   height:100vh;
@@ -38,7 +97,7 @@ main{
 }
 
 .menu{
-  background:$color-2nd;
+  background: white;
   height:100vh;
   width:$menu-width-desktop;
   position:fixed;
@@ -46,13 +105,15 @@ main{
   left:0;
   z-index:5;
   outline:none;
+  box-shadow: 2px 2px 5px grey;
 
   .avatar{
     background:rgba(0,0,0,0.1);
-    padding:2em 0.5em;
+    padding:1em 0.5em;
     text-align:center;
     border-radius: 0px;
     width: 100%;
+    border-bottom: 1px solid black;
 
     img{
       width:100px;
@@ -60,24 +121,39 @@ main{
       box-shadow:0 0 0 4px rgba(255,255,255,0.2);
     }
 
+    p {
+      color: grey;
+    }
+
+    h2 {
+      color: grey;
+      margin: 10px;
+      margin-bottom: 20px;
+    }
+
   }
 
   ul{
     list-style:none;
-    padding:0.5em 0;
-    margin:0;
+    padding:0.2em 0;
+    text-align: center;
+    margin-top: 10px;
 
     li{
-      padding:0.5em 1em 0.5em 3em;
+      padding:0.5em 3em 0.5em 3em;
       font-size:0.95em;
       font-weight:regular;
       background-repeat:no-repeat;
       background-position:left 15px center;
       background-size:auto 20px;
+      border-radius: 2px;
       transition:all 0.15s linear;
       cursor:pointer;
       color: white;
-      text-decoration: none;
+    }
+
+    a {
+      color: black;
     }
   }
 }
@@ -99,7 +175,7 @@ main{
       height:40px;
       position:absolute;
       left:100%;
-      background:$color-2nd;
+      background: grey;
 
       &:before, &:after{
         content:'';
@@ -120,9 +196,10 @@ main{
     }
 
     ul{
+      margin-top: 10px;
 
       li{
-        padding:1em 1em 1em 3em;
+        padding:0.5em 3em 0.5em 3em;
         font-size:1.2em;
       }
     }
@@ -137,3 +214,25 @@ main{
     }
   }
 }
+
+.btn-sign-in {
+  background-color: $color4;
+  border-radius: 2px;
+}
+
+a.btn-sign-in {
+  color: white;
+}
+
+.btn-log-out {
+  background-color: $color4;
+  border-radius: 2px;
+}
+
+a.btn-log-out {
+  color: white;
+}
+
+
+
+
