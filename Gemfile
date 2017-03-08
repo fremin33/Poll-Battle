@@ -22,6 +22,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'faker'
 gem 'omniauth-facebook'
+gem "socialization"
 
 
 group :development, :test do

@@ -204,6 +204,8 @@ GEM
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
     slop (3.6.0)
+    socialization (1.2.0)
+      activerecord
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -260,6 +262,7 @@ DEPENDENCIES
   redis
   sass-rails
   simple_form
+  socialization
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier

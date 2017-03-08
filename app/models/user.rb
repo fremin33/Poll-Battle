@@ -8,7 +8,8 @@ class User < ApplicationRecord
   validates :email, :password, :username,  presence: true
   validates :email,  uniqueness: true
   has_attachment :picture
-
+  acts_as_follower
+  acts_as_followable
 
   has_many :polls
   has_many :votes
