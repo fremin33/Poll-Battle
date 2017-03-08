@@ -5,7 +5,11 @@
       <div class="cardm">
         <div class="head">
           <h2>
-          <%= image_tag poll.user.facebook_picture_url %>
+            <% if poll.user.facebook_picture_url? %>
+              <%= image_tag poll.user.facebook_picture_url %>
+            <% else %>
+              <%= cl_image_tag poll.user.picture.path %>
+            <% end %>
           </h2>
           <p><%= poll.user.username %></p>
           <h4><%= poll.title %></h4>
