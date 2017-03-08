@@ -1,6 +1,6 @@
 class Response < ApplicationRecord
   belongs_to :poll
-  has_many :votes
+  has_many :votes, dependent: :destroy
   has_attachment :picture
   validates :picture, presence: true
   validates :label, presence: true
