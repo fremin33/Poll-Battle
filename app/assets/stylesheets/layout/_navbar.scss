@@ -13,6 +13,15 @@ body{
   background-size: cover; /* version standardisée */
 }
 
+.top-encart {
+  padding-bottom: 20px;
+  border-bottom: 1px solid white;
+
+}
+ .top-encart h3 {
+    margin: 2px;
+    text-align: center;
+ }
 
 .logo-box {
   position: relative;
@@ -20,53 +29,47 @@ body{
   height: 50px;
   margin-top: 10px;
   margin-left: 10px;
+
+  .first-box {
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
+
+  .separator {
+    position: absolute;
+    height: 40px;
+    border-left: 2px solid white;
+    left: 110px;
+    top: 10px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
+
+  .second-box {
+    position: absolute;
+    top: 15px;
+    left: 116px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    -webkit-transform:skew(-10deg);
+    -moz-transform:skew(-10deg);
+    -o-transform:skew(-10deg);
+    transform:skew(-10deg);
+  }
 }
-
-.first-box {
-  position: absolute;
-  top: 15px;
-  left: 55px;
-  width: 50px;
-  height: 30px;
-  border: 2px solid white;
-  border-radius: 5px;
-  -webkit-transform:skew(-10deg);
-  -moz-transform:skew(-10deg);
-  -o-transform:skew(-10deg);
-  transform:skew(-10deg);
- }
-
-.separator {
-  position: absolute;
-  height: 40px;
-  border-left: 2px solid white;
-  left: 110px;
-  top: 10px;
-  -webkit-transform:skew(-10deg);
-  -moz-transform:skew(-10deg);
-  -o-transform:skew(-10deg);
-  transform:skew(-10deg);
-}
-
-.second-box {
-  position: absolute;
-  top: 15px;
-  left: 116px;
-  width: 50px;
-  height: 30px;
-  border: 2px solid white;
-  border-radius: 5px;
-  -webkit-transform:skew(-10deg);
-  -moz-transform:skew(-10deg);
-  -o-transform:skew(-10deg);
-  transform:skew(-10deg);
- }
-
- .top-encart h3 {
-    margin: 2px;
-    text-align: center;
- }
-
 
 main{
   position:relative;
@@ -104,10 +107,11 @@ main{
 
   .avatar{
     background:rgba(0,0,0,0.1);
-    padding:2em 0.5em;
+    padding:1em 0.5em;
     text-align:center;
     border-radius: 0px;
     width: 100%;
+    border-bottom: 1px solid white;
 
     img{
       width:100px;
@@ -192,3 +196,25 @@ main{
     }
   }
 }
+
+.btn-sign-in {
+  background-color: $color3;
+  border-radius: 2px;
+}
+
+a.btn-sign-in {
+  color: white;
+}
+
+.btn-log-out {
+  background-color: $color4;
+  border-radius: 2px;
+}
+
+a.btn-log-out {
+  color: white;
+}
+
+
+
+
