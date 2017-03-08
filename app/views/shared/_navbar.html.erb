@@ -1,20 +1,33 @@
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
+    <div class="top-encart">
+      <div class="logo-box">
+          <div class="first-box">
+          </div>
+          <div class="separator">
+          </div>
+          <div class="second-box">
+          </div>
+      </div>
+      <div class="main-title">
+        <h3>P'All Battle</h3>
+      </div>
+    </div>
   <header class="avatar">
-    <% if user_signed_in? %>
-      <% if current_user.facebook_picture_url? %>
-        <%= image_tag current_user.facebook_picture_url %>
+      <% if user_signed_in? %>
+        <% if current_user.facebook_picture_url? %>
+          <%= image_tag current_user.facebook_picture_url %>
+        <% else %>
+          <%= image_tag "http://placehold.it/30x30" %>
+        <% end %>
       <% else %>
         <%= image_tag "http://placehold.it/30x30" %>
       <% end %>
-    <% else %>
-      <%= image_tag "http://placehold.it/30x30" %>
-    <% end %>
-      <% if user_signed_in? %>
-        <h2><%= current_user.username %></h2>
-      <% else %>
-        <h2></h2>
-      <% end %>
+        <% if user_signed_in? %>
+          <h2><%= current_user.username %></h2>
+        <% else %>
+          <h2></h2>
+        <% end %>
   </header>
 
   <ul>
@@ -38,7 +51,7 @@
       <%= link_to('Log out', destroy_user_session_path, :method => 'delete')%>
     </span></li>
     <% else %>
-  <li></span>
+  <li><span>
   <%= link_to new_user_session_path do %>
   <%= "Sign in" %>
   <% end %>
