@@ -1,0 +1,15 @@
+var first_count = $('#f_count');
+var second_count = $('#s_count');
+var first_percent = $('#f_percent');
+var second_percent = $('#s_percent');
+
+first_percent.empty();
+second_percent.empty();
+first_count.empty();
+second_count.empty();
+
+
+first_count.append("<%= @f_count %>");
+second_count.append("<%= @s_count %>");
+first_percent.append("<%= @f_calcul %> %");
+second_percent.append("<%= @s_calcul %>%");

@@ -8,13 +8,13 @@
   <div class="clip-left">
     <div class="left-wrapper">
       <%= cl_image_tag @first_response.picture.path%>
-      <%= simple_form_for([@first_response, @vote]) do |f| %>
+      <%= simple_form_for([@first_response, @vote], remote: true) do |f| %>
         <%= f.submit "", class: "carda-button" %>
       <% end %>
       <div class="left-content">
         <h1><%= @first_response.label %></h1>
-        <p>Votes : <%= @first_response_count  %></p>
-        <p><%= @first_response_percent %> %</p>
+        <p>Votes : <span id="f_count"><%= @first_response_count  %></span> </p>
+        <p id="f_percent"><%= @first_response_percent %> %</p>
       </div>
     </div>
   </div>
@@ -22,12 +22,12 @@
   <div class="clip-right">
     <div class="right-wrapper">
       <%= cl_image_tag @second_response.picture.path %>
-      <%= simple_form_for([@second_response, @vote]) do |f| %>
+      <%= simple_form_for([@second_response, @vote], remote: true) do |f| %>
         <%= f.submit "", class: "carda-button" %>
       <% end %>
       <div class="right-content">
-        <p><%= @second_response_percent %> %</p>
-        <p>Votes : <%= @second_response_count  %></p>
+        <p id="s_percent"><%= @second_response_percent %> %</p>
+        <p>Votes : <span id="s_count"><%= @second_response_count  %></span> </p>
         <h1><%= @second_response.label %></h1>
       </div>
     </div>
