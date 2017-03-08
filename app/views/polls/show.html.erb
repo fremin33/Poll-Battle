@@ -46,7 +46,7 @@
 </svg>
 <div id="reviews">
   <% if @poll.reviews.blank? %>
-    Be the first to leave a comment for this battle
+    <p id="emptyreviews">Be the first to leave a comment for this battle</p>
   <% else %>
     <% @poll.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
