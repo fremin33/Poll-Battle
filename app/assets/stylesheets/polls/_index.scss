@@ -8,7 +8,7 @@ $break-position: 60%;
   position: relative;
   color: white;
   @media (max-width: 800px) {
-    height: 150px;
+    height: 33.33vh;
   }
 
   .clip-left, .clip-right {
@@ -31,14 +31,16 @@ $break-position: 60%;
   .left-wrapper {
     right: 100% - $break-position;
     img {
-      width: 100%;
+      width: 61%;
       height: 100%;
     }
   }
   .right-wrapper {
     left: 100% - $break-position;
         img {
-      width: 100%;
+      right: 0px;
+      position: inherit;
+      width: 60%;
       height: 100%;
     }
   }
@@ -69,3 +71,174 @@ $break-position: 60%;
 
 }
 
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:600);
+
+
+.head,
+.body,
+.foot,
+.box,
+.cardm {
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 3px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  width: 100%;
+  padding: 0px;
+  height: 50vh;
+}
+
+.cardm {
+  background: radial-gradient(rgba(0,0,0,.2), rgba(0,0,0,.1));
+}
+
+.follow {
+  background: #FFF;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 100%;
+  color: #76A8CD;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 1em;
+  padding: 8px 10px;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+}
+.follow:hover {
+  background: #76A8CD;
+  color: #FFF;
+}
+
+.head {
+  background: #F9F9F9;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px 3px 0 0;
+  color: #325976;
+  font-size: 16px;
+  height: 67px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 10px 10px;
+  position: relative;
+  width: 100%;
+}
+
+.head h2 {
+  background: rgba(0, 0, 0, .08);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+  display: inline-block;
+  height: 63px;
+  margin: -10px 10px -10px -10px;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.head h4 {
+  color: rgba(0, 0, 0, 0.65);
+  display: inline-block;
+  font-size: 10px;
+  left: 0;
+  letter-spacing: 1px;
+  margin: 0 auto 0 75px;
+  position: absolute;
+  right: 0;
+  top: 34px;
+}
+
+.head img {
+  border-radius: 3px;
+  display: block;
+  height: 40px;
+  margin: 0 auto;
+  object-fit: cover;
+  width: 40px;
+}
+
+.head p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.head .word {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+}
+
+.head .letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.head .letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.head .letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.head .letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.body {
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-top: 0;
+}
+
+.foot {
+  background: #EEE;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  color: #265E88;
+  font-family: 'Roboto', serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.foot .box {
+  background: transparent;
+  border: 0;
+  display: flex;
+  margin: -10px;
+  max-width: none;
+  padding: 0;
+  width: calc(100% + 20px);
+}
+
+.foot .box a {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.foot .box a span {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0 4px 0 0;
+  vertical-align: middle;
+}
+
+footer {
+  color: #555;
+  font-weight: 600;
+}
+footer a {
+  color: #08F;
+}
