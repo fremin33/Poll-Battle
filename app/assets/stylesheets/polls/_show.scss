@@ -53,6 +53,15 @@ $break-position: 70%;
   .left-content, .right-content {
     padding: 20px;
     position: absolute;
+
+    h1 {
+      margin: 5px;
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 
   .right-content {

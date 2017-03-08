@@ -14,6 +14,7 @@
       <div class="left-content">
         <h1><%= @first_response.label %></h1>
         <p>Votes : <%= @first_response_count  %></p>
+        <p><%= @first_response_percent %> %</p>
       </div>
     </div>
   </div>
@@ -32,6 +33,7 @@
     </div>
   </div>
 </div>
+
 <svg class="clip-svg" width="0" height="0">
   <defs>
     <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
@@ -51,6 +53,7 @@
     <% end %>
   <% end %>
 </div>
+
 <div id="comment-box">
 <%= render 'reviews/form', poll: @poll, review: @review %>
 </div>
