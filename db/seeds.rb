@@ -8,7 +8,8 @@ Category.destroy_all
   User.new(
     email: Faker::Internet.email,
     password: "pollbattle",
-    username: Faker::Internet.user_name
+    username: Faker::Internet.user_name,
+    picture_url: "http://res.cloudinary.com/dibgaxttc/image/upload/v1488365558/music_wtcq12.jpg"
     ).save
 end
 
@@ -46,4 +47,7 @@ Category.new(name: "Television").save
 Category.last.picture_url = "http://res.cloudinary.com/dibgaxttc/image/upload/v1488554416/television_zieqaf.jpg"
 
 
+Poll.new(title: "First challenge, let's go", category: Category.all.sample, user: User.all.sample).save
+Response.new(label: "Shakira", poll: Poll.first, picture_url: "http://res.cloudinary.com/dibgaxttc/image/upload/v1488554416/television_zieqaf.jpg" ).save
+Response.new(label: "Beyoncé", poll: Poll.first, picture_url: "http://res.cloudinary.com/dibgaxttc/image/upload/v1488554415/eve-arnold-marylin-LA_pazgba.jpg").save
 
