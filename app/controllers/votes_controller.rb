@@ -25,7 +25,7 @@ class VotesController < ApplicationController
     @f_count = @response.poll.responses.first.votes.size
     @s_count = @response.poll.responses.last.votes.size
     total_count = @f_count + @s_count
-    @f_calcul = (@f_count.to_f / total_count.to_f) * 100
-    @s_calcul = (@s_count.to_f / total_count.to_f) * 100
+    @f_calcul = ((@f_count.to_f / total_count.to_f) * 100).round(2)
+    @s_calcul = ((@s_count.to_f / total_count.to_f) * 100).round(2)
   end
 end
