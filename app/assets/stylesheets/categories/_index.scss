@@ -24,6 +24,10 @@
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
+  @media (max-width: 800px) {
+    height: 33.33vh;
+  }
+
   &:hover {
     display: flex;
     content: center;
