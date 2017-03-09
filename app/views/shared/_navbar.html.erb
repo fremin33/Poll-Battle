@@ -22,7 +22,7 @@
       <% if user_signed_in? %>
         <% if current_user.facebook_picture_url? %>
           <%= image_tag current_user.facebook_picture_url %>
-        <% elsif current_user.picture %>
+        <% elsif current_user.picture? %>
           <%= cl_image_tag current_user.picture.path %>
         <% else %>
           <%= image_tag "http://placehold.it/30x30" %>
