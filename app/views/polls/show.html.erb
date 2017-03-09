@@ -46,7 +46,6 @@
   </div>
 </div>
 
-<div class="foot" style="height: 100%">
 <div id="reviews">
   <% if @poll.reviews.blank? %>
     <p id="emptyreviews">Be the first to leave a comment for this battle</p>
@@ -58,7 +57,6 @@
 </div>
 <div id="comment-box">
   <%= render 'reviews/form', poll: @poll, review: @review %>
-</div>
 </div>
 
 
