@@ -1,14 +1,16 @@
 <div class="head">
-          <h2>
-            <% if @poll.user.facebook_picture_url? %>
-              <%= image_tag @poll.user.facebook_picture_url %>
-            <% else %>
-              <%= cl_image_tag @poll.user.picture.path %>
-            <% end %>
-          </h2>
-          <p><%= @poll.user.username %></p>
-          <h4><%= @poll.title %></h4>
-        </div>
+  <h2>
+    <% if @poll.user.facebook_picture_url? %>
+          <%= image_tag @poll.user.facebook_picture_url %>
+    <% elsif @poll.user.picture? %>
+      <%= cl_image_tag @poll.user.picture.path %>
+    <% else %>
+      <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
+    <% end %>
+  </h2>
+  <p><%= @poll.user.username %></p>
+  <h4><%= @poll.title %></h4>
+</div>
 
 <div class="carda">
   <div class="circle">
@@ -48,7 +50,9 @@
 
 <div id="reviews">
   <% if @poll.reviews.blank? %>
+  <div class="head" style="height: 100%">
     <p id="emptyreviews">Be the first to leave a comment for this battle</p>
+  </div>
   <% else %>
     <% @poll.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
