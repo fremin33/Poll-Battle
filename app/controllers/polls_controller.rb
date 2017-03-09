@@ -34,7 +34,6 @@ class PollsController < ApplicationController
     if user_signed_in?
       @current_user_response = current_user.voted_for(@poll)
     end
-     session[:url] = request.original_url
   end
 
   def new
