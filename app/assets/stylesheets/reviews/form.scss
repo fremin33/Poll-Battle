@@ -1,8 +1,9 @@
 .btn-review {
   background-color: $color4;
-  font-color: white;
+  font-color: black;
   text-decoration: none;
   border-radius: 2px;
+  color: white;
 }
 
 #reviews {
@@ -11,19 +12,20 @@
 }
 
 input#review_content {
-  background: none;
-  color: white;
+  background: white;
+  color: black;
   border: none;
-  border-bottom : 2px solid white;
+  border-bottom : 2px solid #E6E6E6;
   box-shadow: none;
   width: 100%;
   margin: auto auto;
 }
 
 #comment-box {
-  background-color: black;
+  background-color: #E6E6E6;
   margin: 10px 0;
   padding: 0 20px;
   padding-bottom: 20px;
   text-align: center;
+  border-top: 2px solid black;
 }
