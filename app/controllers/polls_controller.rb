@@ -1,6 +1,6 @@
 class PollsController < ApplicationController
   before_action :set_poll, only: [:show ]
-  skip_before_action :authenticate_user!, only: [:index, :show, :new]
+  skip_before_action :authenticate_user!, only: [:index, :new]
   def index
     @polls = Poll.all
     @follow = Follow.new
@@ -25,8 +25,13 @@ class PollsController < ApplicationController
     @first_response_count = @first_response.votes.size
     @second_response_count = @second_response.votes.size
     @total_response = @first_response_count.to_f + @second_response_count.to_f
+    if @total_response == 0
+      @first_response_percent = 0
+      @second_response_percent = 0
+    else
     @first_response_percent = ((@first_response_count.to_f / @total_response.to_f) * 100).round(2)
     @second_response_percent = ((@second_response_count.to_f / @total_response.to_f) * 100).round(2)
+    end
     if user_signed_in?
       @current_user_response = current_user.voted_for(@poll)
     end
