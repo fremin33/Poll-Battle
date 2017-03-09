@@ -10,7 +10,7 @@
     <%= f.input :email, required: true, required: false%>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), required: false%>
     <%= f.input :password_confirmation, required: true, required: false %>
-    <%= f.input :picture, as: :attachinary %>
+    <%= f.input :picture, as: :attachinary, width: 50, height: 50, crop: :fill %>
   </div>
 
   <div class="form-actions">
