@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :responses do
     resources :votes
   end
+  resources :follows, only: [:new, :create]
 end

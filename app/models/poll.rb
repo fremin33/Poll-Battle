@@ -8,4 +8,6 @@ class Poll < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :category_id, presence: true
+
+
 end

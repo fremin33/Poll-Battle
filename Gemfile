@@ -8,6 +8,7 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
+gem 'thor', '0.19.1'
 gem 'redis'
 
 gem 'sass-rails'
@@ -22,6 +23,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'faker'
 gem 'omniauth-facebook'
+gem "socialization"
 
 
 group :development, :test do

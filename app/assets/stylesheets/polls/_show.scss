@@ -53,6 +53,7 @@ $break-position: 70%;
   .left-content, .right-content {
     padding: 20px;
     position: absolute;
+    pointer-events: none;
 
     h1 {
       margin: 5px;
@@ -69,6 +70,7 @@ $break-position: 70%;
     right: 0;
     text-align: right;
     text-shadow: 2px 2px 2px black;
+
     h1 {
       margin-left: 0;
     }
@@ -78,6 +80,7 @@ $break-position: 70%;
     top: 0;
     left: 0;
     text-shadow: 2px 2px 2px black;
+    pointer-events: none;
     h1 {
       margin-left: 0;
     }

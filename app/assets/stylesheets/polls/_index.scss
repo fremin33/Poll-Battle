@@ -45,29 +45,6 @@ $break-position: 60%;
     }
   }
 
-  .left-content, .right-content {
-    padding: 20px;
-    position: absolute;
-  }
-
-  .right-content {
-    bottom: 0;
-    right: 0;
-  }
-
-  .left-content {
-    top: 0;
-    left: 0;
-  }
-  .cardc-button {
-    @extend %cover;
-    width: 100%;
-    background: transparent;
-    border: none;
-    &:active {
-      background: rgba(red, 0.3);
-    }
-  }
 
 }
 

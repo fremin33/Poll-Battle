@@ -3,6 +3,7 @@ class PollsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
     @polls = Poll.all
+    @follow = Follow.new
   end
 
   def user
