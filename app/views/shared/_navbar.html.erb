@@ -26,7 +26,7 @@
           <%= cl_image_tag current_user.picture.path %>
         <% end %>
       <% else %>
-        <%= image_tag "http://placehold.it/30x30" %>
+        <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
       <% end %>
         <% if user_signed_in? %>
           <h2><%= current_user.username %></h2>
@@ -37,6 +37,7 @@
         <%= link_to('Log out', destroy_user_session_path, class: "btn btn-log-out", :method => 'delete')%>
       <% else %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
+        <%= link_to "Sign in with Facebook", omniauth_authorize_path(resource_name, "facebook"), class: "btn btn-sign-in-with" %>
       <% end %>
   </header>
 
