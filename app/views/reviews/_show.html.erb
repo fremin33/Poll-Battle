@@ -1,9 +1,9 @@
 <div class="media">
   <div class="media-left">
   <% if user_signed_in? %>
-    <% if current_user.facebook_picture_url? %>
+    <% if review.user.facebook_picture_url? %>
       <%= cl_image_tag review.user.facebook_picture_url %>
-    <% elsif current_user.picture_url? %>
+    <% elsif review.user.picture? %>
      <%= cl_image_tag review.user.picture.path %>
     <% else %>
       <%= image_tag "http://placehold.it/30x30" %>
