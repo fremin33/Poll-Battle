@@ -27,8 +27,8 @@
       <% end %>
       <div class="left-content">
         <h1><%= @first_response.label %></h1>
-        <p>Votes : <span id="f_count"><%= @first_response_count  %></span> </p>
         <p id="f_percent"><%= @first_response_percent %> %</p>
+        <p>Votes : <span id="f_count"><%= @first_response_count  %></span> </p>
       </div>
     </div>
   </div>
@@ -40,9 +40,9 @@
         <%= f.submit "", class: "carda-button" %>
       <% end %>
       <div class="right-content">
+        <h1><%= @second_response.label %></h1>
         <p id="s_percent"><%= @second_response_percent %> %</p>
         <p>Votes : <span id="s_count"><%= @second_response_count  %></span> </p>
-        <h1><%= @second_response.label %></h1>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
 
 <div id="reviews">
   <% if @poll.reviews.blank? %>
-  <div class="head" style="height: 100%">
+  <div id="head-first-comment" class="head" style="height: 100%">
     <p id="emptyreviews">Be the first to leave a comment for this battle</p>
   </div>
   <% else %>
