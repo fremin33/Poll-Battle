@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="padding: 0px;">
   <div class="main">
     <p class="description">Welcome to your own interface. You can modify your poll here !</p>
 
@@ -42,29 +42,64 @@
       </div>
     </div>
 
+<div class="container-fluid" style="padding: 0px">
+  <div class="row" style="margin: 0px">
     <% @polls.each do |poll| %>
-    <%= link_to poll_path(poll) do %>
-      <div class="cardf">
-        <div class="clip-left">
-          <div class="left-wrapper">
-            <%= cl_image_tag poll.responses[0].picture.path%>
-            <div class="left-content">
-              <h1><%= poll.responses[0].label %></h1>
-            </div>
-          </div>
+    <div class="col-xs-12 col-md-4" style="padding: 0px">
+      <div class="cardm">
+        <div class="head">
+          <h2>
+            <% if poll.user.facebook_picture_url? %>
+              <%= image_tag poll.user.facebook_picture_url %>
+            <% else %>
+              <%= cl_image_tag poll.user.picture.path %>
+            <% end %>
+          </h2>
+          <p><%= poll.user.username %></p>
+          <h4><%= poll.title %></h4>
         </div>
-        <div class="clip-right">
-          <div class="right-wrapper">
-            <%= cl_image_tag poll.responses[1].picture.path %>
-            <div class="right-content">
-              <h1><%= poll.responses[1].label %></h1>
+        <div class="body">
+          <%= link_to poll_path(poll) do %>
+          <div class="cardc1">
+            <div class="clip-left">
+              <div class="left-wrapper">
+                <%= cl_image_tag poll.responses[0].picture.path%>
+              </div>
+            </div>
+            <div class="clip-right">
+              <div class="right-wrapper">
+                <%= cl_image_tag poll.responses[1].picture.path %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="foot">
+            <div class="box">
+              <a href=""><span class="ion-heart"></span> <%= poll.responses.first.votes.size %> Votes</a>
+              <a href=""><span class="ion-eye"></span> <%= poll.reviews.size %> Reviews</a>
+              <a href=""><span class="ion-chatbox"></span> <%= poll.responses.last.votes.size %> Votes</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+      <% end %>
+  </div>
 
-    <% end %>
-    <% end %>
+</div>
+<svg class="clip-svg" width="0" height="0">
+  <defs>
+  <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
+  <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
+    </clipPath>
+    <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
+    <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
+      </clipPath>
+      </defs>
+    </svg>
+
+
+
   </div>
 
   </div>
