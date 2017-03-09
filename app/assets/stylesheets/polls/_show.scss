@@ -10,12 +10,18 @@ $break-position: 70%;
 
 .carda {
   max-width: 2000px;
-  height: 100vh;
+  height: 93vh;
   position: relative;
   color: white;
   box-shadow: 1px 1px 5px black;
   @media (max-width: 800px) {
     height: 300px;
+  }
+  .body {
+      @media (max-width: 800px) {
+    height: 300px;
+  }
+
   }
 
   .clip-left, .clip-right {

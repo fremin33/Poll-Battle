@@ -1,3 +1,15 @@
+<div class="head">
+          <h2>
+            <% if @poll.user.facebook_picture_url? %>
+              <%= image_tag @poll.user.facebook_picture_url %>
+            <% else %>
+              <%= cl_image_tag @poll.user.picture.path %>
+            <% end %>
+          </h2>
+          <p><%= @poll.user.username %></p>
+          <h4><%= @poll.title %></h4>
+        </div>
+
 <div class="carda">
   <div class="circle">
     VS
@@ -34,6 +46,23 @@
   </div>
 </div>
 
+<div class="foot" style="height: 100%">
+<div id="reviews">
+  <% if @poll.reviews.blank? %>
+    <p id="emptyreviews">Be the first to leave a comment for this battle</p>
+  <% else %>
+    <% @poll.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+<div id="comment-box">
+<%= render 'reviews/form', poll: @poll, review: @review %>
+</div>
+</div>
+
+
+
 <svg class="clip-svg" width="0" height="0">
   <defs>
     <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
@@ -44,18 +73,3 @@
     </clipPath>
   </defs>
 </svg>
-<div id="reviews">
-  <% if @poll.reviews.blank? %>
-    <p id="emptyreviews">Be the first to leave a comment for this battle</p>
-  <% else %>
-    <% @poll.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
-  <% end %>
-</div>
-
-<div id="comment-box">
-<%= render 'reviews/form', poll: @poll, review: @review %>
-</div>
-
-

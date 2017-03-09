@@ -1,1 +1,20 @@
-<p>- "<%= review.content %>" <em style="font-size: 13px">posted by<b style="color: #2ECAC0"> <%= review.user.username %></b> at <%= review.created_at.strftime("%I:%M %p on %B %d") %></em></p>
+<div class="media">
+  <div class="media-left">
+  <% if user_signed_in? %>
+    <% if current_user.facebook_picture_url? %>
+      <%= cl_image_tag review.user.facebook_picture_url %>
+    <% elsif current_user.picture_url? %>
+     <%= cl_image_tag review.user.picture.path %>
+    <% else %>
+      <%= image_tag "http://placehold.it/30x30" %>
+    <% end %>
+  <% else %>
+    <%= image_tag "http://placehold.it/30x30" %>
+  <% end %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= review.user.username %></h4>
+    <p><%= review.content %></p>
+  </div>
+      <p> Posted : </b> at <%= review.created_at.strftime("%I:%M %p on %B %d") %></em></p>
+</div>
