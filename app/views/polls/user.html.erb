@@ -1,10 +1,10 @@
 <div class="container-fluid" style="padding: 0px;">
   <div class="main">
-    <p class="description">Welcome to your own interface. You can modify your poll here !</p>
-
+    <div class="dash-card" style="background-color: white">
+    <p class="description text">Welcome to <%= @user.username %> interface!
     <div class="stats-container">
       <div class="stat">
-        <div class="number">
+        <div class="number text">
           <% if @user_votes.nil? %>
             0
           <% else %>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="stat">
-        <div class="number">
+        <div class="number text">
           <% if @user_polls.nil? %>
             0
           <% else %>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="stat active">
-        <div class="number">
+        <div class="number text">
           <% if @user_reviews.nil? %>
             0
           <% else %>
@@ -37,10 +37,14 @@
       </div>
 
       <div class="stat">
-        <div class="number">0</div>
+        <div class="number text">0</div>
         <div class="text">Following</div>
       </div>
     </div>
+  </div>
+
+
+
 
 <div class="container-fluid" style="padding: 0px">
   <div class="row" style="margin: 0px">
@@ -49,11 +53,13 @@
       <div class="cardm">
         <div class="head">
           <h2>
-            <% if poll.user.facebook_picture_url? %>
-              <%= image_tag poll.user.facebook_picture_url %>
-            <% else %>
-              <%= cl_image_tag poll.user.picture.path %>
-            <% end %>
+        <% if poll.user.facebook_picture_url? %>
+          <%= image_tag poll.user.facebook_picture_url %>
+        <% elsif poll.user.picture? %>
+          <%= cl_image_tag poll.user.picture.path %>
+        <% else %>
+          <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
+        <% end %>
           </h2>
           <p><%= poll.user.username %></p>
           <h4><%= poll.title %></h4>
@@ -97,21 +103,6 @@
       </clipPath>
       </defs>
     </svg>
-
-
-
   </div>
+</div>
 
-  </div>
-
-
-<svg class="clip-svg" width="0" height="0">
-  <defs>
-    <clipPath id="clip-left-path" clipPathUnits="objectBoundingBox">
-      <polygon points="0 0, 0.6 0, 0.4 1, 0 1">
-    </clipPath>
-    <clipPath id="clip-right-path" clipPathUnits="objectBoundingBox">
-      <polygon points="0.6 0, 1 0, 1 1, 0.4 1">
-    </clipPath>
-  </defs>
-</svg>
