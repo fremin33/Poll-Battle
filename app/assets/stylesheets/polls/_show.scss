@@ -26,6 +26,7 @@ $break-position: 70%;
 
   .clip-left, .clip-right {
     @extend %cover;
+    background-size: cover;
   }
 
   .clip-left {
@@ -38,7 +39,6 @@ $break-position: 70%;
 
   .left-wrapper, .right-wrapper {
     @extend %cover;
-    background-size: cover;
     background-position: center center;
   }
   .left-wrapper {
@@ -104,7 +104,7 @@ $break-position: 70%;
     background: transparent;
     border: none;
     &:active {
-      background: rgba(red, 0.3);
+      background: rgba(green, 0.5);
     }
   }
 
