@@ -1,69 +1,83 @@
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
-    <div class="top-encart">
+
+  <div class="top-encart">
     <%= link_to root_path do %>
       <div class="logo-box">
-          <div class="first-box">
-          </div>
-          <div class="separator">
-          </div>
-          <div class="second-box">
-          </div>
+        <div class="first-box">
+        </div>
+        <div class="separator">
+        </div>
+        <div class="second-box">
+        </div>
       </div>
     <% end %>
-      <div class="main-title">
-        <h3>P'All Battle</h3>
-      </div>
+
+    <div class="main-title">
+      <h3>P'All Battle</h3>
     </div>
-  <header class="avatar">
-    <div class="profile">
-      <p>Profile</p>
-    </div>
-      <% if user_signed_in? %>
-        <% if current_user.facebook_picture_url? %>
-          <%= image_tag current_user.facebook_picture_url %>
-        <% elsif current_user.picture %>
-          <%= cl_image_tag current_user.picture.path %>
+  </div>
+
+  <header class="profile">
+    <div class="profile-info">
+      <div class="avatar">
+        <% if user_signed_in? %>
+          <% if current_user.facebook_picture_url? %>
+            <%= image_tag current_user.facebook_picture_url %>
+          <% elsif current_user.picture %>
+            <%= cl_image_tag current_user.picture.path %>
+          <% else %>
+            <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
+          <% end %>
         <% else %>
-          <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
         <% end %>
-      <% else %>
-        <%= image_tag "http://betterpropertiesauburn.com/wp-content/uploads/2015/11/ad516503a11cd5ca435acc9bb6523536-1.png" %>
-      <% end %>
+      </div>
+
+      <div class="user-username">
         <% if user_signed_in? %>
           <h2><%= current_user.username %></h2>
         <% else %>
           <h2></h2>
         <% end %>
+      </div>
+    </div>
+
+    <div class="sign-in-button">
       <% if user_signed_in? %>
         <%= link_to('Log out', destroy_user_session_path, class: "btn btn-log-out", :method => 'delete')%>
       <% else %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-sign-in" %>
-        <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "btn btn-sign-in" %>
+    </div>
+
+    <div clss="sign-in-fb">
+        <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "btn btn-sign-in-with" %>
       <% end %>
+    </div>
   </header>
 
-  <ul>
-     <li><span>
-      <%= link_to root_path do %>
-      <%= "All Polls" %>
-      <% end %>
-    </span></li>
-    <li><span>
-      <%= link_to categories_path do %>
-      <%= "Categories" %>
-      <% end %>
-    </span></li>
-    <li><span>
-      <%= link_to polls_user_path do %>
-      <%= "Dashboard" %>
-      <% end %>
-    </span></li>
-    <li><span>
-      <%= link_to new_poll_path do %>
-      <%= "Create your poll" %>
-      <% end %>
-    </span></li>
-  </ul>
+  <div class="navigation">
+    <ul>
+       <li><span>
+        <%= link_to root_path do %>
+        <%= "All Polls" %>
+        <% end %>
+      </span></li>
+      <li><span>
+        <%= link_to categories_path do %>
+        <%= "Categories" %>
+        <% end %>
+      </span></li>
+      <li><span>
+        <%= link_to polls_user_path do %>
+        <%= "Dashboard" %>
+        <% end %>
+      </span></li>
+      <li><span>
+        <%= link_to new_poll_path do %>
+        <%= "Create your poll" %>
+        <% end %>
+      </span></li>
+    </ul>
+  </div>
 </nav>
 

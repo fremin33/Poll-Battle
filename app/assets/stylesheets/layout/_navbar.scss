@@ -107,18 +107,21 @@ main{
   outline:none;
   box-shadow: 2px 2px 5px grey;
 
-  .avatar{
-    background:rgba(0,0,0,0.1);
+  .profile{
+    background: $color5;
     padding:1em 0.5em;
+    padding-top: 0px;
+    padding-bottom: 30px;
     text-align:center;
     border-radius: 0px;
     width: 100%;
     border-bottom: 1px solid black;
 
     img{
-      width:100px;
+      width:60px;
       overflow:hidden;
-      box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+      border-radius: 3px;
+      border: 1px solid black;
     }
 
     p {
@@ -129,8 +132,8 @@ main{
       color: grey;
       margin: 10px;
       margin-bottom: 20px;
+      font-size: 18px;
     }
-
   }
 
   ul{
@@ -169,6 +172,7 @@ main{
     box-shadow:0 0 0 100em rgba(0,0,0,0);
     transform:translate3d(-$menu-width-smartphone,0,0);
     transition:all 0.3s ease-in-out;
+
 
     .smartphone-menu-trigger{
       width:40px;
@@ -218,6 +222,12 @@ main{
 .btn-sign-in {
   background-color: $color4;
   border-radius: 2px;
+  margin-bottom: 5px;
+  &:hover {
+    background-color: #61D3C6;
+    border-radius: 2px;
+    margin-bottom: 5px;
+  }
 }
 
 .btn-sign-in-with {
@@ -225,21 +235,66 @@ main{
   background-color: #469AE0;
   border-color: #308edc;
   border-radius: 2px;
+  &:hover {
+    color: #fff;
+    background-color: #308edc;
+    border-color: #308edc;
+    border-radius: 2px;
+  }
 }
 
 a.btn-sign-in {
   color: white;
+  width: 70%;
 }
 
-.btn-log-out {
-  background-color: $color4;
-  border-radius: 2px;
-}
-
-a.btn-log-out {
+a.btn-sign-in:hover {
   color: white;
 }
 
+.btn-log-out {
+  background-color: white;
+  border-radius: 2px;
+  width: 60%;
+  &:hover{
+    background-color: #BD5656;
+    color: white;
 
+  }
+}
 
+a.btn-log-out {
+  color: grey;
+  justify-content: center;
+}
 
+.profile-info{
+  display: flex;
+  justify-content :center;
+  margin-bottom: 15px;
+      padding-top: 20px;
+
+  .avatar{
+    width: 60px;
+    margin:0 0;
+  }
+
+  .user-username {
+
+    h2{
+      top: 21px;
+      margin: 0;
+      margin-left: 10px;
+      position: relative;
+      padding-left: 8px;
+      border-left: 3px solid grey;
+      border-radius: 5px;
+    }
+  }
+}
+
+.navigation {
+  background-color: #EEEEEE;
+  padding-top: 5px;
+  padding-bottom: 100vh;
+}
