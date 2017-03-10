@@ -13,5 +13,7 @@
   <% end %>
   </h2>
   <p><%= review.user.username %></p>
-  <h4><%= review.content %> </br> <p> Posted : at <%= review.created_at.strftime("%I:%M %p on %B %d") %></em></p></h4>
+  <div class="review-content-and-date">
+    <h4><b>"<%= review.content %>"</b></br> <p class="review-date"><em>Posted : at <%= review.created_at.strftime("%I:%M %p on %B %d") %></em></p></h4>
+  </div>
 </div>

@@ -286,8 +286,9 @@ a.btn-log-out {
       margin: 0;
       margin-left: 10px;
       position: relative;
-      padding-left: 8px;
+      padding: 0px 8px;
       border-left: 3px solid grey;
+      border-right: 3px solid grey;
       border-radius: 5px;
     }
   }

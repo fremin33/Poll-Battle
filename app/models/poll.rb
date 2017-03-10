@@ -7,7 +7,7 @@ class Poll < ApplicationRecord
 
   validates :title, presence: true
   validates :title, uniqueness: true
-  validates :title, length: {minimum: 2, maximum: 56}
+  validates :title, length: {minimum: 2, maximum: 30}
   validates :category_id, presence: true
 
 
