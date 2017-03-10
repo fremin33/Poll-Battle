@@ -1,4 +1,4 @@
-<div class="header-title" style= "margin-top: 60px; margin-bottom: 10px; text-align: center;">
+<div class="header-title" style= "margin-bottom: 10px; text-align: center;">
   <h1>Fill up the form and submit</h1>
 </div>
   <%= simple_form_for(@poll) do |f| %>
@@ -7,18 +7,18 @@
   <h3 class="title-info">Main information</h3>
     <div class="row">
       <div class="col-xs-6">
-        <%= f.input :title, label: "Battle title :"  %>
+        <%= f.input :title, label: "Battle title :", placeholder: "Title" %>
       </div>
       <div class="col-xs-6">
-        <%= f.input :category_id, collection: @categories, label: "Select category" %>
+        <%= f.input :category_id, collection: @categories, label: "Select category", placeholder: "Select category" %>
       </div>
     </div>
     <h3 class="title-info">Opponent one - Details</h3>
     <div class="row">
       <div class="col-xs-6">
         <%= f.simple_fields_for :response_1 do |response| %>
-        <%= response.input :label, label: "Name :" %>
-        <p id="p">Picture</p>
+        <%= response.input :label, label: "Name :", placeholder: "Enter a name here" %>
+        <p id="p">Picture :</p>
         <%= response.file_field(:picture)%>
         <% end %>
       </div>
@@ -27,14 +27,14 @@
     <div class="row">
       <div class="col-xs-6">
         <%= f.simple_fields_for :response_2 do |response| %>
-          <%= response.input :label, label: "Name :"  %>
-          <p id="p">Picture</p>
+          <%= response.input :label, label: "Name :", placeholder: "Enter name here" %>
+          <p id="p">Picture :</p>
           <%= response.file_field(:picture) %>
         <% end %>
       </div>
     </div>
 </div>
 <div id="submit" class="submit text-center">
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "btn btn-sign-in" %>
 </div>
 <% end %>

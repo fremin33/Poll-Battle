@@ -119,13 +119,13 @@ $break-position: 60%;
 .head h4 {
   color: rgba(0, 0, 0, 0.65);
   display: inline-block;
-  font-size: 10px;
+  font-size: 12px;
   left: 0;
   letter-spacing: 1px;
   margin: 0 auto 0 75px;
   position: absolute;
   right: 0;
-  top: 34px;
+  top: 32px;
 }
 
 .head img {
@@ -138,9 +138,16 @@ $break-position: 60%;
 }
 
 .head p {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   margin: 0;
+  font-size: 16px;
+  top: -2px;
+}
+
+.head p.review-date {
+  font-size: 10px;
 }
 
 .head .word {
@@ -182,8 +189,7 @@ $break-position: 60%;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 0 0 3px 3px;
   border-top: 0;
-  color: #265E88;
-  font-family: 'Roboto', serif;
+  font-color: grey;
   font-size: 14px;
   font-weight: 600;
 }
@@ -210,6 +216,7 @@ $break-position: 60%;
   font-size: 20px;
   padding: 0 4px 0 0;
   vertical-align: middle;
+  text-decoration: none;
 }
 
 footer {
@@ -217,5 +224,21 @@ footer {
   font-weight: 600;
 }
 footer a {
-  color: #08F;
+  color: grey;
+  text-decoration: none;
+}
+
+.box a{
+  color: grey;
+  height: 50px;
+}
+
+.review-content-and-date h4{
+  top: 28px;
+  font-size: 13px;
+}
+
+.review-content-and-date p{
+  margin-top: 3px;
+  font-size: 10px;
 }
